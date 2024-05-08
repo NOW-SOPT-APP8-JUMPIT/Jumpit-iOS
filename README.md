@@ -3,7 +3,7 @@
 <aside>
 이곳인가 내가 아요를 시작할 곳이 <br>
 후훗
-**러브라이브 보는 사람 손**
+러브라이브 보는 사람 손
 
 ### 팀명: 물품보관소
 ![181a7c74a8b1f2b23](https://github.com/NOW-SOPT-APP8-JUMPIT/Jumpit-iOS/assets/109647045/1fc30f05-a566-47be-a386-4c8fb1f0a770)
