@@ -2,6 +2,7 @@
 
 # 💗 Jumpit-iOS 💗
 ![KakaoTalk_Photo_2024-05-09-01-30-20](https://github.com/NOW-SOPT-APP8-JUMPIT/Jumpit-iOS/assets/80394340/3026ace3-7900-4338-8cfd-3bcf87aa9d73)
+
 ```
 이곳인가
 내가 아요를 시작할 곳이
