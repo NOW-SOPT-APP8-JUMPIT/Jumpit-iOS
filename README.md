@@ -1,18 +1,14 @@
-# Jumpit-iOS
+<div align="center">
 
-<aside>
-이곳인가 내가 아요를 시작할 곳이 <br>
-후훗<br>
-러브라이브 보는 사람 손
-
-### 팀명: 물품보관소
-![181a7c74a8b1f2b23](https://github.com/NOW-SOPT-APP8-JUMPIT/Jumpit-iOS/assets/109647045/1fc30f05-a566-47be-a386-4c8fb1f0a770)
-
-</aside>
+# 💗 Jumpit-iOS 💗
+![KakaoTalk_Photo_2024-05-09-01-30-20](https://github.com/NOW-SOPT-APP8-JUMPIT/Jumpit-iOS/assets/80394340/3026ace3-7900-4338-8cfd-3bcf87aa9d73)
 
 ## 폴더링 구조
+
+</div>
+
 ```markdown
-📁 Project
+📁 Jumpit
 ├── AppDelegate
 ├── SceneDelegate
 ├── 📁 Source
@@ -39,7 +35,9 @@
 │   ├── 후추논의
 ```
 
-## 커밋 컨벤션
+<div align="center">
+  
+## 태그 컨벤션
 |태그|사용하는 부분|
 |:-----:|:-----:|
 |🧃 [Feat]|기능 구현 시 사용합니다.|
@@ -53,9 +51,55 @@
 |👼 [MinJi]|민지에게 도움을 요청할 때 사용합니다.|
 
 ## 브랜치 컨벤션
+</div>
 
 ```markdown
 # 브랜치 네이밍 양식
 작업 태그/이슈 번호-작업 내용
 ```
 
+<div align="center">
+  
+## 이슈 컨벤션
+
+</div>
+
+```markdown
+# 이슈 이름 양식
+[작업 태그] 작업 내용할거다 유진아
+
+# 올바른 이슈 이름 예시
+- 🍎 [Style] 로그인 화면 UI 구현할거다 유진아
+```
+
+<div align="center">
+  
+## 커밋 컨벤션
+
+</div>
+
+```markdown
+# 커밋 메시지 양식 
+[작업 태그] 작업 내용했다 민지야
+#이슈 번호
+
+# 올바른 커밋 이름 예시
+[Style] 로그인 버튼 구현했다 민지야
+#1
+```
+
+<div align="center">
+
+## PR 컨벤션
+
+</div>
+
+```markdown
+# PR 이름 양식
+[작업 태그] #이슈 번호 작업 내용했다 지훈아
+
+# 올바른 PR 이름 예시
+🍎 [Style] 로그인 화면 UI 구현했다 지훈아
+```
+
+</div>
