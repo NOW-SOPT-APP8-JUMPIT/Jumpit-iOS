@@ -199,6 +199,8 @@
 				784A199B2BF1B0BF003F19C8 /* Pretendard-Light.otf in Resources */,
 				784A199E2BF1B0BF003F19C8 /* Pretendard-Black.otf in Resources */,
 				784A199A2BF1B0BF003F19C8 /* Pretendard-Thin.otf in Resources */,
+				7852BD232BEB41D30037BA7E /* LaunchScreen.storyboard in Resources */,
+				7852BD202BEB41D30037BA7E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
