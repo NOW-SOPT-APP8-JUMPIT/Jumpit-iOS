@@ -14,8 +14,11 @@
 		<string>Pretendard-SemiBold.otf</string>
 		<string>Pretendard-Thin.otf</string>
 	</array>
+<<<<<<< HEAD
 	<key>UIUserInterfaceStyle</key>
 	<string>Light</string>
+=======
+>>>>>>> minji
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
