@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		784A19862BF1AE1B003F19C8 /* Pretendard-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 784A197D2BF1AE1A003F19C8 /* Pretendard-ExtraBold.otf */; };
+		784A19872BF1AE1B003F19C8 /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 784A197E2BF1AE1A003F19C8 /* Pretendard-Regular.otf */; };
+		784A19882BF1AE1B003F19C8 /* Pretendard-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 784A197F2BF1AE1A003F19C8 /* Pretendard-Thin.otf */; };
+		784A19892BF1AE1B003F19C8 /* Pretendard-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 784A19802BF1AE1A003F19C8 /* Pretendard-Black.otf */; };
+		784A198A2BF1AE1B003F19C8 /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 784A19812BF1AE1A003F19C8 /* Pretendard-SemiBold.otf */; };
+		784A198B2BF1AE1B003F19C8 /* Pretendard-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 784A19822BF1AE1B003F19C8 /* Pretendard-ExtraLight.otf */; };
+		784A198C2BF1AE1B003F19C8 /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 784A19832BF1AE1B003F19C8 /* Pretendard-Bold.otf */; };
+		784A198D2BF1AE1B003F19C8 /* Pretendard-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 784A19842BF1AE1B003F19C8 /* Pretendard-Light.otf */; };
+		784A198E2BF1AE1B003F19C8 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 784A19852BF1AE1B003F19C8 /* Pretendard-Medium.otf */; };
 		7852BD172BEB41D20037BA7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7852BD162BEB41D20037BA7E /* AppDelegate.swift */; };
 		7852BD192BEB41D20037BA7E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7852BD182BEB41D20037BA7E /* SceneDelegate.swift */; };
 		7852BD1B2BEB41D20037BA7E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7852BD1A2BEB41D20037BA7E /* ViewController.swift */; };
@@ -19,6 +28,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		784A197D2BF1AE1A003F19C8 /* Pretendard-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraBold.otf"; sourceTree = "<group>"; };
+		784A197E2BF1AE1A003F19C8 /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
+		784A197F2BF1AE1A003F19C8 /* Pretendard-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Thin.otf"; sourceTree = "<group>"; };
+		784A19802BF1AE1A003F19C8 /* Pretendard-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Black.otf"; sourceTree = "<group>"; };
+		784A19812BF1AE1A003F19C8 /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
+		784A19822BF1AE1B003F19C8 /* Pretendard-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraLight.otf"; sourceTree = "<group>"; };
+		784A19832BF1AE1B003F19C8 /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
+		784A19842BF1AE1B003F19C8 /* Pretendard-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Light.otf"; sourceTree = "<group>"; };
+		784A19852BF1AE1B003F19C8 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
 		7852BD132BEB41D20037BA7E /* Jumpit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jumpit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7852BD162BEB41D20037BA7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7852BD182BEB41D20037BA7E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -43,6 +61,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		784A197C2BF1AE08003F19C8 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				784A19802BF1AE1A003F19C8 /* Pretendard-Black.otf */,
+				784A19832BF1AE1B003F19C8 /* Pretendard-Bold.otf */,
+				784A197D2BF1AE1A003F19C8 /* Pretendard-ExtraBold.otf */,
+				784A19822BF1AE1B003F19C8 /* Pretendard-ExtraLight.otf */,
+				784A19842BF1AE1B003F19C8 /* Pretendard-Light.otf */,
+				784A19852BF1AE1B003F19C8 /* Pretendard-Medium.otf */,
+				784A197E2BF1AE1A003F19C8 /* Pretendard-Regular.otf */,
+				784A19812BF1AE1A003F19C8 /* Pretendard-SemiBold.otf */,
+				784A197F2BF1AE1A003F19C8 /* Pretendard-Thin.otf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
 		7852BD0A2BEB41D20037BA7E = {
 			isa = PBXGroup;
 			children = (
@@ -62,6 +96,7 @@
 		7852BD152BEB41D20037BA7E /* Jumpit */ = {
 			isa = PBXGroup;
 			children = (
+				784A197C2BF1AE08003F19C8 /* Font */,
 				7852BD162BEB41D20037BA7E /* AppDelegate.swift */,
 				7852BD182BEB41D20037BA7E /* SceneDelegate.swift */,
 				7852BD1A2BEB41D20037BA7E /* ViewController.swift */,
@@ -143,7 +178,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				7852BD232BEB41D30037BA7E /* LaunchScreen.storyboard in Resources */,
+				784A19882BF1AE1B003F19C8 /* Pretendard-Thin.otf in Resources */,
+				784A198B2BF1AE1B003F19C8 /* Pretendard-ExtraLight.otf in Resources */,
+				784A198D2BF1AE1B003F19C8 /* Pretendard-Light.otf in Resources */,
+				784A198A2BF1AE1B003F19C8 /* Pretendard-SemiBold.otf in Resources */,
+				784A19872BF1AE1B003F19C8 /* Pretendard-Regular.otf in Resources */,
 				7852BD202BEB41D30037BA7E /* Assets.xcassets in Resources */,
+				784A19892BF1AE1B003F19C8 /* Pretendard-Black.otf in Resources */,
+				784A198C2BF1AE1B003F19C8 /* Pretendard-Bold.otf in Resources */,
+				784A19862BF1AE1B003F19C8 /* Pretendard-ExtraBold.otf in Resources */,
+				784A198E2BF1AE1B003F19C8 /* Pretendard-Medium.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
