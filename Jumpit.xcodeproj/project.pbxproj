@@ -22,10 +22,7 @@
 		7852BD1B2BEB41D20037BA7E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7852BD1A2BEB41D20037BA7E /* ViewController.swift */; };
 		7852BD202BEB41D30037BA7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7852BD1F2BEB41D30037BA7E /* Assets.xcassets */; };
 		7852BD232BEB41D30037BA7E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7852BD212BEB41D30037BA7E /* LaunchScreen.storyboard */; };
-		DDF572052BEF50CE0014C742 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = DDF572042BEF50CE0014C742 /* SnapKit */; };
-		DDF572082BEF51070014C742 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = DDF572072BEF51070014C742 /* Moya */; };
-		DDF5720B2BEF512C0014C742 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = DDF5720A2BEF512C0014C742 /* Kingfisher */; };
-		DDF5720E2BEF51710014C742 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = DDF5720D2BEF51710014C742 /* Then */; };
+<<<<<<< HEAD
 		78CE0C9B2BF1A8F000A00FE3 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 78CE0C922BF1A8EF00A00FE3 /* Pretendard-Medium.otf */; };
 		78CE0C9C2BF1A8F000A00FE3 /* Pretendard-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 78CE0C932BF1A8EF00A00FE3 /* Pretendard-ExtraLight.otf */; };
 		78CE0C9D2BF1A8F000A00FE3 /* Pretendard-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 78CE0C942BF1A8EF00A00FE3 /* Pretendard-ExtraBold.otf */; };
@@ -35,6 +32,12 @@
 		78CE0CA12BF1A8F000A00FE3 /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 78CE0C982BF1A8F000A00FE3 /* Pretendard-SemiBold.otf */; };
 		78CE0CA22BF1A8F000A00FE3 /* Pretendard-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 78CE0C992BF1A8F000A00FE3 /* Pretendard-Thin.otf */; };
 		78CE0CA32BF1A8F000A00FE3 /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 78CE0C9A2BF1A8F000A00FE3 /* Pretendard-Bold.otf */; };
+=======
+		DDF572052BEF50CE0014C742 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = DDF572042BEF50CE0014C742 /* SnapKit */; };
+		DDF572082BEF51070014C742 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = DDF572072BEF51070014C742 /* Moya */; };
+		DDF5720B2BEF512C0014C742 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = DDF5720A2BEF512C0014C742 /* Kingfisher */; };
+		DDF5720E2BEF51710014C742 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = DDF5720D2BEF51710014C742 /* Then */; };
+>>>>>>> minji
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
