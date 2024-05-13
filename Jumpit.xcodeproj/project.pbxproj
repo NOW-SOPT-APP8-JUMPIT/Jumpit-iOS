@@ -7,11 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		784A19862BF1AE1B003F19C8 /* Pretendard-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 784A197D2BF1AE1A003F19C8 /* Pretendard-ExtraBold.otf */; };
+		784A19872BF1AE1B003F19C8 /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 784A197E2BF1AE1A003F19C8 /* Pretendard-Regular.otf */; };
+		784A19882BF1AE1B003F19C8 /* Pretendard-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 784A197F2BF1AE1A003F19C8 /* Pretendard-Thin.otf */; };
+		784A19892BF1AE1B003F19C8 /* Pretendard-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 784A19802BF1AE1A003F19C8 /* Pretendard-Black.otf */; };
+		784A198A2BF1AE1B003F19C8 /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 784A19812BF1AE1A003F19C8 /* Pretendard-SemiBold.otf */; };
+		784A198B2BF1AE1B003F19C8 /* Pretendard-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 784A19822BF1AE1B003F19C8 /* Pretendard-ExtraLight.otf */; };
+		784A198C2BF1AE1B003F19C8 /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 784A19832BF1AE1B003F19C8 /* Pretendard-Bold.otf */; };
+		784A198D2BF1AE1B003F19C8 /* Pretendard-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 784A19842BF1AE1B003F19C8 /* Pretendard-Light.otf */; };
+		784A198E2BF1AE1B003F19C8 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 784A19852BF1AE1B003F19C8 /* Pretendard-Medium.otf */; };
 		7852BD172BEB41D20037BA7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7852BD162BEB41D20037BA7E /* AppDelegate.swift */; };
 		7852BD192BEB41D20037BA7E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7852BD182BEB41D20037BA7E /* SceneDelegate.swift */; };
 		7852BD1B2BEB41D20037BA7E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7852BD1A2BEB41D20037BA7E /* ViewController.swift */; };
 		7852BD202BEB41D30037BA7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7852BD1F2BEB41D30037BA7E /* Assets.xcassets */; };
 		7852BD232BEB41D30037BA7E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7852BD212BEB41D30037BA7E /* LaunchScreen.storyboard */; };
+<<<<<<< HEAD
 		78CE0C9B2BF1A8F000A00FE3 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 78CE0C922BF1A8EF00A00FE3 /* Pretendard-Medium.otf */; };
 		78CE0C9C2BF1A8F000A00FE3 /* Pretendard-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 78CE0C932BF1A8EF00A00FE3 /* Pretendard-ExtraLight.otf */; };
 		78CE0C9D2BF1A8F000A00FE3 /* Pretendard-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 78CE0C942BF1A8EF00A00FE3 /* Pretendard-ExtraBold.otf */; };
@@ -21,9 +31,24 @@
 		78CE0CA12BF1A8F000A00FE3 /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 78CE0C982BF1A8F000A00FE3 /* Pretendard-SemiBold.otf */; };
 		78CE0CA22BF1A8F000A00FE3 /* Pretendard-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 78CE0C992BF1A8F000A00FE3 /* Pretendard-Thin.otf */; };
 		78CE0CA32BF1A8F000A00FE3 /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 78CE0C9A2BF1A8F000A00FE3 /* Pretendard-Bold.otf */; };
+=======
+		DDF572052BEF50CE0014C742 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = DDF572042BEF50CE0014C742 /* SnapKit */; };
+		DDF572082BEF51070014C742 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = DDF572072BEF51070014C742 /* Moya */; };
+		DDF5720B2BEF512C0014C742 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = DDF5720A2BEF512C0014C742 /* Kingfisher */; };
+		DDF5720E2BEF51710014C742 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = DDF5720D2BEF51710014C742 /* Then */; };
+>>>>>>> minji
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		784A197D2BF1AE1A003F19C8 /* Pretendard-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraBold.otf"; sourceTree = "<group>"; };
+		784A197E2BF1AE1A003F19C8 /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
+		784A197F2BF1AE1A003F19C8 /* Pretendard-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Thin.otf"; sourceTree = "<group>"; };
+		784A19802BF1AE1A003F19C8 /* Pretendard-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Black.otf"; sourceTree = "<group>"; };
+		784A19812BF1AE1A003F19C8 /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
+		784A19822BF1AE1B003F19C8 /* Pretendard-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraLight.otf"; sourceTree = "<group>"; };
+		784A19832BF1AE1B003F19C8 /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
+		784A19842BF1AE1B003F19C8 /* Pretendard-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Light.otf"; sourceTree = "<group>"; };
+		784A19852BF1AE1B003F19C8 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
 		7852BD132BEB41D20037BA7E /* Jumpit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jumpit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7852BD162BEB41D20037BA7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7852BD182BEB41D20037BA7E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,12 +72,32 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDF5720B2BEF512C0014C742 /* Kingfisher in Frameworks */,
+				DDF572082BEF51070014C742 /* Moya in Frameworks */,
+				DDF572052BEF50CE0014C742 /* SnapKit in Frameworks */,
+				DDF5720E2BEF51710014C742 /* Then in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		784A197C2BF1AE08003F19C8 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				784A19802BF1AE1A003F19C8 /* Pretendard-Black.otf */,
+				784A19832BF1AE1B003F19C8 /* Pretendard-Bold.otf */,
+				784A197D2BF1AE1A003F19C8 /* Pretendard-ExtraBold.otf */,
+				784A19822BF1AE1B003F19C8 /* Pretendard-ExtraLight.otf */,
+				784A19842BF1AE1B003F19C8 /* Pretendard-Light.otf */,
+				784A19852BF1AE1B003F19C8 /* Pretendard-Medium.otf */,
+				784A197E2BF1AE1A003F19C8 /* Pretendard-Regular.otf */,
+				784A19812BF1AE1A003F19C8 /* Pretendard-SemiBold.otf */,
+				784A197F2BF1AE1A003F19C8 /* Pretendard-Thin.otf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
 		7852BD0A2BEB41D20037BA7E = {
 			isa = PBXGroup;
 			children = (
@@ -72,7 +117,10 @@
 		7852BD152BEB41D20037BA7E /* Jumpit */ = {
 			isa = PBXGroup;
 			children = (
+				784A19A22BF1B2BD003F19C8 /* Detail */,
+				784A198F2BF1B0A1003F19C8 /* Font */,
 				78CE0C912BF1A8C600A00FE3 /* Font */,
+				784A197C2BF1AE08003F19C8 /* Font */,
 				7852BD162BEB41D20037BA7E /* AppDelegate.swift */,
 				7852BD182BEB41D20037BA7E /* SceneDelegate.swift */,
 				7852BD1A2BEB41D20037BA7E /* ViewController.swift */,
@@ -115,6 +163,12 @@
 			dependencies = (
 			);
 			name = Jumpit;
+			packageProductDependencies = (
+				DDF572042BEF50CE0014C742 /* SnapKit */,
+				DDF572072BEF51070014C742 /* Moya */,
+				DDF5720A2BEF512C0014C742 /* Kingfisher */,
+				DDF5720D2BEF51710014C742 /* Then */,
+			);
 			productName = Jumpit;
 			productReference = 7852BD132BEB41D20037BA7E /* Jumpit.app */;
 			productType = "com.apple.product-type.application";
@@ -143,6 +197,12 @@
 				Base,
 			);
 			mainGroup = 7852BD0A2BEB41D20037BA7E;
+			packageReferences = (
+				DDF572032BEF50CE0014C742 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				DDF572062BEF51070014C742 /* XCRemoteSwiftPackageReference "Moya" */,
+				DDF572092BEF512C0014C742 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				DDF5720C2BEF51710014C742 /* XCRemoteSwiftPackageReference "Then" */,
+			);
 			productRefGroup = 7852BD142BEB41D20037BA7E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -157,6 +217,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7852BD232BEB41D30037BA7E /* LaunchScreen.storyboard in Resources */,
+				784A19882BF1AE1B003F19C8 /* Pretendard-Thin.otf in Resources */,
+				784A198B2BF1AE1B003F19C8 /* Pretendard-ExtraLight.otf in Resources */,
+				784A198D2BF1AE1B003F19C8 /* Pretendard-Light.otf in Resources */,
+				784A198A2BF1AE1B003F19C8 /* Pretendard-SemiBold.otf in Resources */,
+				784A19872BF1AE1B003F19C8 /* Pretendard-Regular.otf in Resources */,
+				7852BD202BEB41D30037BA7E /* Assets.xcassets in Resources */,
+				784A199F2BF1B0BF003F19C8 /* Pretendard-Regular.otf in Resources */,
+				784A19A12BF1B0BF003F19C8 /* Pretendard-ExtraBold.otf in Resources */,
+				784A19992BF1B0BF003F19C8 /* Pretendard-Medium.otf in Resources */,
+				784A199B2BF1B0BF003F19C8 /* Pretendard-Light.otf in Resources */,
+				784A199E2BF1B0BF003F19C8 /* Pretendard-Black.otf in Resources */,
+				784A199A2BF1B0BF003F19C8 /* Pretendard-Thin.otf in Resources */,
 				78CE0CA32BF1A8F000A00FE3 /* Pretendard-Bold.otf in Resources */,
 				7852BD232BEB41D30037BA7E /* LaunchScreen.storyboard in Resources */,
 				78CE0CA22BF1A8F000A00FE3 /* Pretendard-Thin.otf in Resources */,
@@ -168,6 +241,10 @@
 				78CE0CA12BF1A8F000A00FE3 /* Pretendard-SemiBold.otf in Resources */,
 				78CE0CA02BF1A8F000A00FE3 /* Pretendard-Black.otf in Resources */,
 				78CE0C9B2BF1A8F000A00FE3 /* Pretendard-Medium.otf in Resources */,
+				784A19892BF1AE1B003F19C8 /* Pretendard-Black.otf in Resources */,
+				784A198C2BF1AE1B003F19C8 /* Pretendard-Bold.otf in Resources */,
+				784A19862BF1AE1B003F19C8 /* Pretendard-ExtraBold.otf in Resources */,
+				784A198E2BF1AE1B003F19C8 /* Pretendard-Medium.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,6 +470,64 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DDF572032BEF50CE0014C742 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+		DDF572062BEF51070014C742 /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.0.3;
+			};
+		};
+		DDF572092BEF512C0014C742 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.11.0;
+			};
+		};
+		DDF5720C2BEF51710014C742 /* XCRemoteSwiftPackageReference "Then" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Then";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DDF572042BEF50CE0014C742 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DDF572032BEF50CE0014C742 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		DDF572072BEF51070014C742 /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DDF572062BEF51070014C742 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+		DDF5720A2BEF512C0014C742 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DDF572092BEF512C0014C742 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		DDF5720D2BEF51710014C742 /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DDF5720C2BEF51710014C742 /* XCRemoteSwiftPackageReference "Then" */;
+			productName = Then;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7852BD0B2BEB41D20037BA7E /* Project object */;
 }
