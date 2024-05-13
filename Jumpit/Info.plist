@@ -2,10 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> Main
 	<key>UIAppFonts</key>
 	<array>
 		<string>Pretendard-Black.otf</string>
@@ -18,20 +14,10 @@
 		<string>Pretendard-SemiBold.otf</string>
 		<string>Pretendard-Thin.otf</string>
 	</array>
-<<<<<<< HEAD
-<<<<<<< HEAD
 	<key>UIUserInterfaceStyle</key>
 	<string>Light</string>
-=======
->>>>>>> minji
-=======
-=======
->>>>>>> parent of fb65321 (📷  Add: Font, ColorAsset 추가했다 민지야)
-=======
 	<key>UIUserInterfaceStyle</key>
 	<string>Light</string>
->>>>>>> Main
->>>>>>> develop
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
