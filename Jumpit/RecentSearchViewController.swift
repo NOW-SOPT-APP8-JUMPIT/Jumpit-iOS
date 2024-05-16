@@ -9,7 +9,7 @@ import UIKit
 import Then
 import SnapKit
 
-class RecentSearchViewController: UIViewController {
+final class RecentSearchViewController: UIViewController {
     // MARK: - Properties
     private lazy var customNavigationBarView = CustomNavigationBarView().then {
         $0.delegate = self
@@ -18,6 +18,7 @@ class RecentSearchViewController: UIViewController {
         $0.delegate = self
     }
     
+    // MARK: - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white

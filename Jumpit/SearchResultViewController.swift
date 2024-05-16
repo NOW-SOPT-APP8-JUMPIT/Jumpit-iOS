@@ -9,7 +9,7 @@ import UIKit
 import Then
 import SnapKit
 
-class SearchResultViewController: UIViewController {
+final class SearchResultViewController: UIViewController {
     // MARK: - Properties
     var searchKeyword: String?
     
@@ -21,6 +21,7 @@ class SearchResultViewController: UIViewController {
         $0.delegate = self
     }
 
+    // MARK: - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -85,12 +86,20 @@ extension SearchResultViewController: CustomNavigationBarDelegate {
 extension SearchResultViewController: SearchResultCollectionViewDelegate {
     func didSelectCategoryCell() {
         let sortCategoryVC = SortCategoryViewController()
-        sortCategoryVC.modalPresentationStyle = .fullScreen
-        present(sortCategoryVC, animated: true, completion: nil)
+        sortCategoryVC.modalPresentationStyle = .custom
+        sortCategoryVC.transitioningDelegate = self
+        present(sortCategoryVC, animated: true)
     }
     
     func didSelectSearchResultCell() {
         let VC = ViewController()
         navigationController?.pushViewController(VC, animated: true)
     }
+}
+
+//MARK: - UIViewControllerTransitioningDelegate
+extension SearchResultViewController: UIViewControllerTransitioningDelegate {
+    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
+            return ModalPresentationController(presentedViewController: presented, presenting: presenting)
+        }
 }

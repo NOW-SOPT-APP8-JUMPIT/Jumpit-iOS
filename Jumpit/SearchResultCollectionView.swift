@@ -23,6 +23,7 @@ final class SearchResultCollectionView: UIView {
     private var categoryData = CategoryModel.dummy()
     private var searchResultData = SearchResultModel.dummy()
     
+    // MARK: - init
     override init(frame: CGRect) {
         super.init(frame: frame)
         
