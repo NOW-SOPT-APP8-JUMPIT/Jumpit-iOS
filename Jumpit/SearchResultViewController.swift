@@ -11,35 +11,36 @@ import SnapKit
 
 class SearchResultViewController: UIViewController {
     // MARK: - Properties
+    var searchKeyword: String?
+    
     private lazy var customNavigationBarView = CustomNavigationBarView().then {
         $0.delegate = self
+        $0.searchBar.text = searchKeyword
     }
-    private var searchResultView = SearchResultView()
-    
+    private lazy var searchResultCollectionView = SearchResultCollectionView().then {
+        $0.delegate = self
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         
         setNavigationController()
-        configureSubviews()
-        makeConstraints()
+        setLayout()
     }
     
-    // MARK: - configureSubviews
-    private func configureSubviews() {
-        [ customNavigationBarView, searchResultView ].forEach {
+    // MARK: - SetLayout
+    private func setLayout() {
+        [customNavigationBarView, searchResultCollectionView].forEach {
             self.view.addSubview($0)
         }
-    }
-    
-    // MARK: - makeConstraints
-    private func makeConstraints() {
+        
         customNavigationBarView.snp.makeConstraints {
             $0.top.leading.trailing.equalTo(view.safeAreaLayoutGuide)
             $0.height.equalTo(63)
         }
-        searchResultView .snp.makeConstraints {
-            $0.top.equalTo(customNavigationBarView.snp.bottom)
+        searchResultCollectionView .snp.makeConstraints {
+            $0.top.equalTo(customNavigationBarView.snp.bottom).offset(20)
             $0.leading.trailing.bottom.equalToSuperview()
         }
     }
@@ -63,11 +64,11 @@ extension SearchResultViewController: CustomNavigationBarDelegate {
     func didTapBackButton() {
         navigationController?.popViewController(animated: true)
     }
-    
     func didSearch(keyword: String) {
         saveRecentSearch(keyword: keyword)
+        searchKeyword = keyword
+        customNavigationBarView.searchBar.text = keyword
     }
-
     private func saveRecentSearch(keyword: String) {
         var searches = UserDefaults.standard.array(forKey: "recentSearchKeywords") as? [String] ?? []
         if !searches.contains(keyword) {
@@ -77,5 +78,19 @@ extension SearchResultViewController: CustomNavigationBarDelegate {
             }
             UserDefaults.standard.set(searches, forKey: "recentSearchKeywords")
         }
+    }
+}
+
+// MARK: - SearchResultCollectionViewDelegate
+extension SearchResultViewController: SearchResultCollectionViewDelegate {
+    func didSelectCategoryCell() {
+        let sortCategoryVC = SortCategoryViewController()
+        sortCategoryVC.modalPresentationStyle = .fullScreen
+        present(sortCategoryVC, animated: true, completion: nil)
+    }
+    
+    func didSelectSearchResultCell() {
+        let VC = ViewController()
+        navigationController?.pushViewController(VC, animated: true)
     }
 }

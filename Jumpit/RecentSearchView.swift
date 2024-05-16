@@ -9,8 +9,13 @@ import UIKit
 import Then
 import SnapKit
 
+protocol RecentSearchViewDelegate: AnyObject {
+    func didSelectKeyword(_ keyword: String)
+}
+
 final class RecentSearchView: UIView {
     // MARK: - Properties
+    weak var delegate: RecentSearchViewDelegate?
     private var recentSearchKeywords: [String] = []
     private var tableViewHeightConstraint: Constraint?
     
@@ -33,7 +38,7 @@ final class RecentSearchView: UIView {
         $0.register(RecentSearchTableViewCell.self, forCellReuseIdentifier: RecentSearchTableViewCell.identifier)
     }
     private let searchBannerImageView = UIImageView().then {
-        $0.image = UIImage(named: "img_search_banner")
+        $0.image = .imgSearchBanner
         $0.contentMode = .scaleAspectFill
     }
     
@@ -51,7 +56,7 @@ final class RecentSearchView: UIView {
     
     // MARK: - SetLayout
     private func setLayout() {
-        [ recentSearchesLabel, allCancelButton, recentSearchesTableView, searchBannerImageView ].forEach {
+        [recentSearchesLabel, allCancelButton, recentSearchesTableView, searchBannerImageView].forEach {
             self.addSubview($0)
         }
         recentSearchesLabel.snp.makeConstraints {
@@ -108,10 +113,8 @@ extension RecentSearchView: UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let vc = detailViewController()
-//        let searchResultId = recentSearchKeywords[indexPath.row].searchResultId
-//        vc.id = searchResultId
-//        self.navigationController?.pushViewController(vc, animated: true)
+        let keyword = recentSearchKeywords[indexPath.row]
+        delegate?.didSelectKeyword(keyword)
     }
 }
 

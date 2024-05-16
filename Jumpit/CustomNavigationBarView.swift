@@ -26,7 +26,7 @@ final class CustomNavigationBarView: UIView {
         $0.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
         $0.tintColor = .black
     }
-    private lazy var makeupSearchBar = UISearchBar().then {
+    lazy var searchBar = UISearchBar().then {
         $0.placeholder = "‘Python’을 검색해보세요"
         $0.backgroundColor = .jumpitGray1
         $0.layer.cornerRadius = 52/2
@@ -40,7 +40,7 @@ final class CustomNavigationBarView: UIView {
         
         if let leftView = textField.leftView as? UIImageView {
             leftView.image = UIImage(named: "icn_search")
-            leftView.tintColor = .black 
+            leftView.tintColor = .black
         }
         
         $0.tintColor = .black
@@ -62,7 +62,7 @@ final class CustomNavigationBarView: UIView {
     // MARK: - SetLayout
     private func setLayout() {
         self.addSubview(navigationBarView)
-        [ backButton, makeupSearchBar ].forEach {
+        [backButton, searchBar].forEach {
             navigationBarView.addSubview($0)
         }
         
@@ -72,10 +72,10 @@ final class CustomNavigationBarView: UIView {
         }
         backButton.snp.makeConstraints {
             $0.leading.equalTo(navigationBarView.snp.leading).offset(6)
-            $0.centerY.equalTo(makeupSearchBar.snp.centerY)
+            $0.centerY.equalTo(searchBar.snp.centerY)
             $0.height.width.equalTo(44)
         }
-        makeupSearchBar.snp.makeConstraints {
+        searchBar.snp.makeConstraints {
             $0.bottom.equalTo(navigationBarView.snp.bottom)
             $0.leading.equalTo(backButton.snp.trailing).offset(3)
             $0.trailing.equalTo(navigationBarView.snp.trailing).inset(22)

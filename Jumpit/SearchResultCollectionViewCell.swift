@@ -11,10 +11,13 @@ import SnapKit
 
 final class  SearchResultCollectionViewCell: UICollectionViewCell {
     // MARK: - Properties
+    static let identifier = "SearchResultCollectionViewCell"
+    
     private let enterpriseImageView = UIImageView().then {
-        $0.image = .none
-        $0.contentMode = .scaleAspectFit
-        $0.layer.cornerRadius = 30
+        $0.image = .imgSearchBanner
+        $0.contentMode = .scaleAspectFill
+        $0.layer.cornerRadius = 25
+        $0.clipsToBounds = true
     }
     private let enterpriseNameLabel = UILabel().then {
         $0.text = "토스뱅크"
@@ -37,11 +40,16 @@ final class  SearchResultCollectionViewCell: UICollectionViewCell {
         $0.numberOfLines = 1
         $0.font = UIFont(name: "Pretendard-Regular", size: 12)
     }
-    private let bookMarkImageView: UIImageView = UIImageView().then {
-        $0.image = .none
+    private lazy var bookMarkImageView: UIImageView = UIImageView().then {
+        $0.image = .icnBmkNormal
         $0.contentMode = .scaleAspectFit
+        $0.isUserInteractionEnabled = true
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(bookMarkTapped))
+        $0.addGestureRecognizer(tapGesture)
     }
-
+    
+    private var isBookmarked: Bool = false
+    
     // MARK: - init
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -55,40 +63,52 @@ final class  SearchResultCollectionViewCell: UICollectionViewCell {
     
     // MARK: - SetLayout
     private func setLayout() {
-        [enterpriseImageView, enterpriseNameLabel, recruitmentNoticeLabel, technologyStackLabel, bookMarkImageView ].forEach {
+        [enterpriseImageView, enterpriseNameLabel, recruitmentNoticeLabel, technologyStackLabel, bookMarkImageView].forEach {
             self.addSubview($0)
         }
         enterpriseImageView.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(14)
+            $0.top.equalToSuperview().offset(15)
             $0.leading.equalToSuperview().offset(16)
             $0.height.width.equalTo(50)
         }
         enterpriseNameLabel.snp.makeConstraints {
             $0.top.equalToSuperview().offset(14)
-            $0.leading.equalTo(enterpriseImageView.snp.leading).offset(20)
+            $0.leading.equalTo(enterpriseImageView.snp.trailing).offset(20)
             $0.trailing.equalTo(bookMarkImageView.snp.leading).offset(-5)
         }
         recruitmentNoticeLabel.snp.makeConstraints {
             $0.top.equalTo(enterpriseNameLabel.snp.bottom).offset(4)
-            $0.leading.equalTo(enterpriseImageView.snp.leading).offset(20)
+            $0.leading.equalTo(enterpriseImageView.snp.trailing).offset(20)
             $0.trailing.equalTo(bookMarkImageView.snp.leading).offset(-5)
         }
         technologyStackLabel.snp.makeConstraints {
             $0.top.equalTo(recruitmentNoticeLabel.snp.bottom).offset(12)
-            $0.leading.equalTo(enterpriseImageView.snp.leading).offset(20)
+            $0.leading.equalTo(enterpriseImageView.snp.trailing).offset(20)
             $0.trailing.equalTo(bookMarkImageView.snp.leading).offset(-5)
         }
         bookMarkImageView.snp.makeConstraints {
             $0.centerY.equalTo(recruitmentNoticeLabel.snp.centerY)
-            $0.trailing.equalToSuperview().offset(14)
+            $0.trailing.equalToSuperview().offset(-14)
             $0.height.width.equalTo(40)
         }
+    }
+    
+    // MARK: - Actions
+    @objc private func bookMarkTapped() {
+        isBookmarked.toggle()
+        updateBookMarkImage()
+    }
+    private func updateBookMarkImage() {
+        let imageName = isBookmarked ? "icn_bmk_selected" : "icn_bmk_normal"
+        bookMarkImageView.image = UIImage(named: imageName)
     }
 }
 
 
 extension SearchResultCollectionViewCell {
-    func dataBind() {
-
+    func dataBind(_ searchResult: SearchResultModel) {
+        enterpriseNameLabel.text = searchResult.enterpriseName
+        recruitmentNoticeLabel.text = searchResult.recruitmentNotice
+        technologyStackLabel.text = searchResult.technologyStack.joined(separator: " · ") 
     }
 }

@@ -14,26 +14,28 @@ class RecentSearchViewController: UIViewController {
     private lazy var customNavigationBarView = CustomNavigationBarView().then {
         $0.delegate = self
     }
-    private var recentSearchView = RecentSearchView()
+    private lazy var recentSearchView = RecentSearchView().then {
+        $0.delegate = self
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         
         setNavigationController()
-        configureSubviews()
-        makeConstraints()
+        setLayout()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        recentSearchView.updateRecentSearches()
     }
     
-    // MARK: - configureSubviews
-    private func configureSubviews() {
-        [ customNavigationBarView, recentSearchView ].forEach {
+    // MARK: - SetLayout
+    private func setLayout() {
+        [customNavigationBarView, recentSearchView].forEach {
             self.view.addSubview($0)
         }
-    }
-    
-    // MARK: - makeConstraints
-    private func makeConstraints() {
+        
         customNavigationBarView.snp.makeConstraints {
             $0.top.leading.trailing.equalTo(view.safeAreaLayoutGuide)
             $0.height.equalTo(63)
@@ -67,5 +69,18 @@ extension RecentSearchViewController: CustomNavigationBarDelegate {
     func didSearch(keyword: String) {
         RecentSearchModel.shared.addSearch(keyword: keyword)
         recentSearchView.updateRecentSearches()
+        
+        let searchResultVC = SearchResultViewController()
+        searchResultVC.searchKeyword = keyword
+        navigationController?.pushViewController(searchResultVC, animated: true)
+    }
+}
+
+// MARK: - RecentSearchViewDelegate
+extension RecentSearchViewController: RecentSearchViewDelegate {
+    func didSelectKeyword(_ keyword: String) {
+        let searchResultVC = SearchResultViewController()
+        searchResultVC.searchKeyword = keyword
+        navigationController?.pushViewController(searchResultVC, animated: true)
     }
 }

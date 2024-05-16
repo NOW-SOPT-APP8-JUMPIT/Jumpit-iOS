@@ -23,7 +23,7 @@ final class  RecentSearchTableViewCell: UITableViewCell {
         $0.font = UIFont(name: "Pretendard-Medium", size: 16)
     }
     private lazy var cancelButton = UIButton().then {
-        $0.setImage(UIImage(named: "icn_x_small"), for: .normal)
+        $0.setImage(.icnXSmall, for: .normal)
         $0.addTarget(self, action: #selector(cancelButtonTapped), for: .touchUpInside)
         $0.tintColor = .jumpitGray4
     }
@@ -42,7 +42,7 @@ final class  RecentSearchTableViewCell: UITableViewCell {
     
     // MARK: - SetLayout
     private func setLayout() {
-        [searchKeywordLabel, cancelButton ].forEach {
+        [searchKeywordLabel, cancelButton].forEach {
             contentView.addSubview($0)
         }
         searchKeywordLabel.snp.makeConstraints {
