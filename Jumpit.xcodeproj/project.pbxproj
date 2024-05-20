@@ -40,6 +40,7 @@
 		7852BD192BEB41D20037BA7E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7852BD182BEB41D20037BA7E /* SceneDelegate.swift */; };
 		7852BD202BEB41D30037BA7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7852BD1F2BEB41D30037BA7E /* Assets.xcassets */; };
 		7852BD232BEB41D30037BA7E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7852BD212BEB41D30037BA7E /* LaunchScreen.storyboard */; };
+		DD7483E02BFB6FD300ED41A1 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7483DF2BFB6FD300ED41A1 /* UIFont+.swift */; };
 		DDF572052BEF50CE0014C742 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = DDF572042BEF50CE0014C742 /* SnapKit */; };
 		DDF572082BEF51070014C742 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = DDF572072BEF51070014C742 /* Moya */; };
 		DDF5720B2BEF512C0014C742 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = DDF5720A2BEF512C0014C742 /* Kingfisher */; };
@@ -82,6 +83,7 @@
 		7852BD1F2BEB41D30037BA7E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7852BD222BEB41D30037BA7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7852BD242BEB41D30037BA7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DD7483DF2BFB6FD300ED41A1 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -280,8 +282,17 @@
 				7852BD1F2BEB41D30037BA7E /* Assets.xcassets */,
 				7852BD212BEB41D30037BA7E /* LaunchScreen.storyboard */,
 				7852BD242BEB41D30037BA7E /* Info.plist */,
+				DD7483E12BFB6FD700ED41A1 /* Extension */,
 			);
 			name = Resource;
+			sourceTree = "<group>";
+		};
+		DD7483E12BFB6FD700ED41A1 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				DD7483DF2BFB6FD300ED41A1 /* UIFont+.swift */,
+			);
+			name = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -386,6 +397,7 @@
 				2D4332712BF651720017A23B /* CategoryModel.swift in Sources */,
 				2D4332602BF63C330017A23B /* CustomNavigationBarView.swift in Sources */,
 				2D43327C2BF6744E0017A23B /* SortCategoryViewController.swift in Sources */,
+				DD7483E02BFB6FD300ED41A1 /* UIFont+.swift in Sources */,
 				2D43326B2BF642590017A23B /* RecentSearchModel.swift in Sources */,
 				2D43326F2BF6509E0017A23B /* SearchResultViewItem.swift in Sources */,
 				2D4332832BF6856B0017A23B /* ModalPresentationController.swift in Sources */,
