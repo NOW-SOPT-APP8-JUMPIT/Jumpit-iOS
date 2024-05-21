@@ -38,9 +38,9 @@
 		784A19A42BF1B2DB003F19C8 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784A19A32BF1B2DB003F19C8 /* DetailViewController.swift */; };
 		7852BD172BEB41D20037BA7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7852BD162BEB41D20037BA7E /* AppDelegate.swift */; };
 		7852BD192BEB41D20037BA7E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7852BD182BEB41D20037BA7E /* SceneDelegate.swift */; };
-		7852BD1B2BEB41D20037BA7E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7852BD1A2BEB41D20037BA7E /* ViewController.swift */; };
 		7852BD202BEB41D30037BA7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7852BD1F2BEB41D30037BA7E /* Assets.xcassets */; };
 		7852BD232BEB41D30037BA7E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7852BD212BEB41D30037BA7E /* LaunchScreen.storyboard */; };
+		DD7483E02BFB6FD300ED41A1 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7483DF2BFB6FD300ED41A1 /* UIFont+.swift */; };
 		DDF572052BEF50CE0014C742 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = DDF572042BEF50CE0014C742 /* SnapKit */; };
 		DDF572082BEF51070014C742 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = DDF572072BEF51070014C742 /* Moya */; };
 		DDF5720B2BEF512C0014C742 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = DDF5720A2BEF512C0014C742 /* Kingfisher */; };
@@ -80,10 +80,10 @@
 		7852BD132BEB41D20037BA7E /* Jumpit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jumpit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7852BD162BEB41D20037BA7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7852BD182BEB41D20037BA7E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		7852BD1A2BEB41D20037BA7E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7852BD1F2BEB41D30037BA7E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7852BD222BEB41D30037BA7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7852BD242BEB41D30037BA7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DD7483DF2BFB6FD300ED41A1 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -255,20 +255,44 @@
 		7852BD152BEB41D20037BA7E /* Jumpit */ = {
 			isa = PBXGroup;
 			children = (
-				784A19A22BF1B2BD003F19C8 /* Detail */,
-				784A198F2BF1B0A1003F19C8 /* Font */,
 				7852BD162BEB41D20037BA7E /* AppDelegate.swift */,
 				7852BD182BEB41D20037BA7E /* SceneDelegate.swift */,
-				7852BD1A2BEB41D20037BA7E /* ViewController.swift */,
+				DD7483DD2BFB6EBF00ED41A1 /* Source */,
+				DD7483DE2BFB6EE600ED41A1 /* Resource */,
+			);
+			path = Jumpit;
+			sourceTree = "<group>";
+		};
+		DD7483DD2BFB6EBF00ED41A1 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				784A19A22BF1B2BD003F19C8 /* Detail */,
 				2D4332642BF63F510017A23B /* RecentSearchView */,
 				2D4332662BF640160017A23B /* SearchResultView */,
 				2D43327D2BF674FE0017A23B /* SortCategoryView */,
 				2D43325F2BF63C330017A23B /* CustomNavigationBarView.swift */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+		DD7483DE2BFB6EE600ED41A1 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				784A198F2BF1B0A1003F19C8 /* Font */,
 				7852BD1F2BEB41D30037BA7E /* Assets.xcassets */,
 				7852BD212BEB41D30037BA7E /* LaunchScreen.storyboard */,
 				7852BD242BEB41D30037BA7E /* Info.plist */,
+				DD7483E12BFB6FD700ED41A1 /* Extension */,
 			);
-			path = Jumpit;
+			name = Resource;
+			sourceTree = "<group>";
+		};
+		DD7483E12BFB6FD700ED41A1 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				DD7483DF2BFB6FD300ED41A1 /* UIFont+.swift */,
+			);
+			name = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -368,12 +392,12 @@
 				2D43325C2BF5F1AD0017A23B /* RecentSearchViewController.swift in Sources */,
 				2D4332882BF68F4E0017A23B /* SortCategoryView.swift in Sources */,
 				2D43327A2BF665C80017A23B /* SearchResultHeaderView.swift in Sources */,
-				7852BD1B2BEB41D20037BA7E /* ViewController.swift in Sources */,
 				2D43325E2BF5F1AD0017A23B /* SearchResultCollectionViewCell.swift in Sources */,
 				7852BD172BEB41D20037BA7E /* AppDelegate.swift in Sources */,
 				2D4332712BF651720017A23B /* CategoryModel.swift in Sources */,
 				2D4332602BF63C330017A23B /* CustomNavigationBarView.swift in Sources */,
 				2D43327C2BF6744E0017A23B /* SortCategoryViewController.swift in Sources */,
+				DD7483E02BFB6FD300ED41A1 /* UIFont+.swift in Sources */,
 				2D43326B2BF642590017A23B /* RecentSearchModel.swift in Sources */,
 				2D43326F2BF6509E0017A23B /* SearchResultViewItem.swift in Sources */,
 				2D4332832BF6856B0017A23B /* ModalPresentationController.swift in Sources */,
