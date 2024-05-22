@@ -101,14 +101,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2D4332642BF63F510017A23B /* RecentSearchView */ = {
+		2D4332642BF63F510017A23B /* RecentSearch */ = {
 			isa = PBXGroup;
 			children = (
 				2D43326C2BF6425C0017A23B /* Model */,
 				2D4332652BF63F7F0017A23B /* View */,
 				2D43326D2BF6426E0017A23B /* Controller */,
 			);
-			name = RecentSearchView;
+			name = RecentSearch;
 			sourceTree = "<group>";
 		};
 		2D4332652BF63F7F0017A23B /* View */ = {
@@ -120,14 +120,14 @@
 			name = View;
 			sourceTree = "<group>";
 		};
-		2D4332662BF640160017A23B /* SearchResultView */ = {
+		2D4332662BF640160017A23B /* SearchResult */ = {
 			isa = PBXGroup;
 			children = (
 				2D4332742BF653AE0017A23B /* Model */,
 				2D4332752BF653B80017A23B /* View */,
 				2D4332762BF653BE0017A23B /* Controller */,
 			);
-			name = SearchResultView;
+			name = SearchResult;
 			sourceTree = "<group>";
 		};
 		2D43326C2BF6425C0017A23B /* Model */ = {
@@ -175,15 +175,14 @@
 			name = Controller;
 			sourceTree = "<group>";
 		};
-		2D43327D2BF674FE0017A23B /* SortCategoryView */ = {
+		2D43327D2BF674FE0017A23B /* SortCategory */ = {
 			isa = PBXGroup;
 			children = (
-				2D4332892BF69CED0017A23B /* LeftAlignedCollectionViewFlowLayout.swift */,
 				2D4332862BF68B6F0017A23B /* View */,
 				2D43327F2BF681FA0017A23B /* Model */,
 				2D43327E2BF681F10017A23B /* Controller */,
 			);
-			name = SortCategoryView;
+			name = SortCategory;
 			sourceTree = "<group>";
 		};
 		2D43327E2BF681F10017A23B /* Controller */ = {
@@ -257,6 +256,7 @@
 			children = (
 				7852BD162BEB41D20037BA7E /* AppDelegate.swift */,
 				7852BD182BEB41D20037BA7E /* SceneDelegate.swift */,
+				7852BD212BEB41D30037BA7E /* LaunchScreen.storyboard */,
 				DD7483DD2BFB6EBF00ED41A1 /* Source */,
 				DD7483DE2BFB6EE600ED41A1 /* Resource */,
 			);
@@ -266,11 +266,9 @@
 		DD7483DD2BFB6EBF00ED41A1 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				DDE8020D2BFCF588000E8461 /* Core */,
 				784A19A22BF1B2BD003F19C8 /* Detail */,
-				2D4332642BF63F510017A23B /* RecentSearchView */,
-				2D4332662BF640160017A23B /* SearchResultView */,
-				2D43327D2BF674FE0017A23B /* SortCategoryView */,
-				2D43325F2BF63C330017A23B /* CustomNavigationBarView.swift */,
+				DDE802102BFCF5A8000E8461 /* Search */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -278,11 +276,10 @@
 		DD7483DE2BFB6EE600ED41A1 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				DD7483E12BFB6FD700ED41A1 /* Extension */,
 				784A198F2BF1B0A1003F19C8 /* Font */,
 				7852BD1F2BEB41D30037BA7E /* Assets.xcassets */,
-				7852BD212BEB41D30037BA7E /* LaunchScreen.storyboard */,
 				7852BD242BEB41D30037BA7E /* Info.plist */,
-				DD7483E12BFB6FD700ED41A1 /* Extension */,
 			);
 			name = Resource;
 			sourceTree = "<group>";
@@ -293,6 +290,25 @@
 				DD7483DF2BFB6FD300ED41A1 /* UIFont+.swift */,
 			);
 			name = Extension;
+			sourceTree = "<group>";
+		};
+		DDE8020D2BFCF588000E8461 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				2D4332892BF69CED0017A23B /* LeftAlignedCollectionViewFlowLayout.swift */,
+				2D43325F2BF63C330017A23B /* CustomNavigationBarView.swift */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		DDE802102BFCF5A8000E8461 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				2D4332642BF63F510017A23B /* RecentSearch */,
+				2D4332662BF640160017A23B /* SearchResult */,
+				2D43327D2BF674FE0017A23B /* SortCategory */,
+			);
+			name = Search;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
