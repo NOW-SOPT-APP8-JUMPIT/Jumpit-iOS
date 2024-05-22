@@ -26,6 +26,12 @@
 		2D4332852BF68A740017A23B /* JobOptionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4332842BF68A740017A23B /* JobOptionCollectionViewCell.swift */; };
 		2D4332882BF68F4E0017A23B /* SortCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4332872BF68F4E0017A23B /* SortCategoryView.swift */; };
 		2D43328A2BF69CED0017A23B /* LeftAlignedCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4332892BF69CED0017A23B /* LeftAlignedCollectionViewFlowLayout.swift */; };
+		7813517B2BFD802B003D1730 /* JumpitBaseApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7813517A2BFD802B003D1730 /* JumpitBaseApi.swift */; };
+		7813517D2BFD8110003D1730 /* JumpitResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7813517C2BFD8110003D1730 /* JumpitResponse.swift */; };
+		7813517F2BFD838A003D1730 /* JumpitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7813517E2BFD838A003D1730 /* JumpitManager.swift */; };
+		781351812BFD843A003D1730 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781351802BFD843A003D1730 /* NetworkError.swift */; };
+		781351832BFD845C003D1730 /* NewworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781351822BFD845C003D1730 /* NewworkProvider.swift */; };
+		781351852BFD8471003D1730 /* PrivacyInfoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781351842BFD8471003D1730 /* PrivacyInfoManager.swift */; };
 		784A19992BF1B0BF003F19C8 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 784A19902BF1B0BE003F19C8 /* Pretendard-Medium.otf */; };
 		784A199A2BF1B0BF003F19C8 /* Pretendard-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 784A19912BF1B0BE003F19C8 /* Pretendard-Thin.otf */; };
 		784A199B2BF1B0BF003F19C8 /* Pretendard-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 784A19922BF1B0BE003F19C8 /* Pretendard-Light.otf */; };
@@ -67,6 +73,12 @@
 		2D4332842BF68A740017A23B /* JobOptionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobOptionCollectionViewCell.swift; sourceTree = "<group>"; };
 		2D4332872BF68F4E0017A23B /* SortCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortCategoryView.swift; sourceTree = "<group>"; };
 		2D4332892BF69CED0017A23B /* LeftAlignedCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftAlignedCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		7813517A2BFD802B003D1730 /* JumpitBaseApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JumpitBaseApi.swift; sourceTree = "<group>"; };
+		7813517C2BFD8110003D1730 /* JumpitResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JumpitResponse.swift; sourceTree = "<group>"; };
+		7813517E2BFD838A003D1730 /* JumpitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JumpitManager.swift; sourceTree = "<group>"; };
+		781351802BFD843A003D1730 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		781351822BFD845C003D1730 /* NewworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewworkProvider.swift; sourceTree = "<group>"; };
+		781351842BFD8471003D1730 /* PrivacyInfoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyInfoManager.swift; sourceTree = "<group>"; };
 		784A19902BF1B0BE003F19C8 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
 		784A19912BF1B0BE003F19C8 /* Pretendard-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Thin.otf"; sourceTree = "<group>"; };
 		784A19922BF1B0BE003F19C8 /* Pretendard-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Light.otf"; sourceTree = "<group>"; };
@@ -212,6 +224,51 @@
 			name = View;
 			sourceTree = "<group>";
 		};
+		781351752BFD7EA1003D1730 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				781351762BFD7FCE003D1730 /* API */,
+				781351772BFD7FD6003D1730 /* Foundation */,
+				781351782BFD7FE1003D1730 /* Manager */,
+				781351792BFD7FEA003D1730 /* Response */,
+			);
+			name = Network;
+			sourceTree = "<group>";
+		};
+		781351762BFD7FCE003D1730 /* API */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = API;
+			sourceTree = "<group>";
+		};
+		781351772BFD7FD6003D1730 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				7813517A2BFD802B003D1730 /* JumpitBaseApi.swift */,
+				781351802BFD843A003D1730 /* NetworkError.swift */,
+				781351822BFD845C003D1730 /* NewworkProvider.swift */,
+				781351842BFD8471003D1730 /* PrivacyInfoManager.swift */,
+			);
+			name = Foundation;
+			sourceTree = "<group>";
+		};
+		781351782BFD7FE1003D1730 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				7813517E2BFD838A003D1730 /* JumpitManager.swift */,
+			);
+			name = Manager;
+			sourceTree = "<group>";
+		};
+		781351792BFD7FEA003D1730 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				7813517C2BFD8110003D1730 /* JumpitResponse.swift */,
+			);
+			name = Response;
+			sourceTree = "<group>";
+		};
 		784A198F2BF1B0A1003F19C8 /* Font */ = {
 			isa = PBXGroup;
 			children = (
@@ -259,6 +316,7 @@
 				7852BD182BEB41D20037BA7E /* SceneDelegate.swift */,
 				DD7483DD2BFB6EBF00ED41A1 /* Source */,
 				DD7483DE2BFB6EE600ED41A1 /* Resource */,
+				781351752BFD7EA1003D1730 /* Network */,
 			);
 			path = Jumpit;
 			sourceTree = "<group>";
@@ -386,13 +444,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				781351832BFD845C003D1730 /* NewworkProvider.swift in Sources */,
 				2D4332852BF68A740017A23B /* JobOptionCollectionViewCell.swift in Sources */,
 				2D43325D2BF5F1AD0017A23B /* RecentSearchTableViewCell.swift in Sources */,
 				2D43328A2BF69CED0017A23B /* LeftAlignedCollectionViewFlowLayout.swift in Sources */,
 				2D43325C2BF5F1AD0017A23B /* RecentSearchViewController.swift in Sources */,
 				2D4332882BF68F4E0017A23B /* SortCategoryView.swift in Sources */,
+				7813517D2BFD8110003D1730 /* JumpitResponse.swift in Sources */,
+				781351812BFD843A003D1730 /* NetworkError.swift in Sources */,
 				2D43327A2BF665C80017A23B /* SearchResultHeaderView.swift in Sources */,
 				2D43325E2BF5F1AD0017A23B /* SearchResultCollectionViewCell.swift in Sources */,
+				7813517F2BFD838A003D1730 /* JumpitManager.swift in Sources */,
 				7852BD172BEB41D20037BA7E /* AppDelegate.swift in Sources */,
 				2D4332712BF651720017A23B /* CategoryModel.swift in Sources */,
 				2D4332602BF63C330017A23B /* CustomNavigationBarView.swift in Sources */,
@@ -401,11 +463,13 @@
 				2D43326B2BF642590017A23B /* RecentSearchModel.swift in Sources */,
 				2D43326F2BF6509E0017A23B /* SearchResultViewItem.swift in Sources */,
 				2D4332832BF6856B0017A23B /* ModalPresentationController.swift in Sources */,
+				781351852BFD8471003D1730 /* PrivacyInfoManager.swift in Sources */,
 				2D4332682BF6402E0017A23B /* SearchResultCollectionView.swift in Sources */,
 				2D43325B2BF5F1AD0017A23B /* RecentSearchView.swift in Sources */,
 				2D4332622BF63DBD0017A23B /* SearchResultViewController.swift in Sources */,
 				2D4332782BF656160017A23B /* SortCategoryCollectionViewCell.swift in Sources */,
 				7852BD192BEB41D20037BA7E /* SceneDelegate.swift in Sources */,
+				7813517B2BFD802B003D1730 /* JumpitBaseApi.swift in Sources */,
 				784A19A42BF1B2DB003F19C8 /* DetailViewController.swift in Sources */,
 				2D4332812BF6836F0017A23B /* SelectedJobOptionsModel.swift in Sources */,
 				2D4332732BF652020017A23B /* SearchResultModel.swift in Sources */,
