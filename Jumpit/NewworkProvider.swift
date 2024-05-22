@@ -8,7 +8,7 @@
 import Foundation
 import Moya
 
-final class NetworkProvider<API: MovieOpenAPI> {
+final class NetworkProvider<API: JumpitAPIEndpoint> {
     
     private let provider: MoyaProvider<API>
     
@@ -22,11 +22,11 @@ final class NetworkProvider<API: MovieOpenAPI> {
         provider.request(api) { result in
             switch result {
             case let .success(response):
-                print("SUCCESS: \(requestString) (\(response.statusCode))")
+                print("SUCCESS: \(requestString) (\(response.statusCode)) 이 떳다 민지야 잘했어!")
                 completion(.success(response))
                 
             case let .failure(error):
-                print("ERROR: \(requestString)")
+                print("ERROR: \(requestString) 가 떳다 민지야 수정하자")
                 completion(.failure(error))
             }
         }

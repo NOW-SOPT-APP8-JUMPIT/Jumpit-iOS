@@ -8,3 +8,8 @@
 import Foundation
 
 //DTO가 들어갑니다
+struct ResumeData: Codable {
+    var title: String
+    var userId: Int
+}
+

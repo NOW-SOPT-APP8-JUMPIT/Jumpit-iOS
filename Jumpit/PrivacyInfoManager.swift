@@ -8,9 +8,7 @@
 import Foundation
 
 enum PrivacyInfoKeys {
-
     static let baseURL = "BaseURL"
-    static let moviekey = "MovieKey"
 }
 
 final class PrivacyInfoManager {
@@ -20,11 +18,6 @@ final class PrivacyInfoManager {
     class var baseURL: String {
         guard let url = shared.info[PrivacyInfoKeys.baseURL] else { fatalError("BaseURL: Base-Info Plist error")}
         return url
-    }
-    
-    class var moviekey: String {
-        guard let key = shared.info[PrivacyInfoKeys.moviekey] else { fatalError("MovieKey: Base-Info Plist error")}
-        return key
     }
     
     private var info: [String: String] {

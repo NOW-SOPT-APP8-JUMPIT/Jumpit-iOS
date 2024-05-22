@@ -4,17 +4,16 @@
 //
 //  Created by 이지훈 on 5/22/24.
 //
-
 import Foundation
 import Moya
 
 // MARK: - Domain
-enum MovieOpenDomain {
+enum JumpitAPIDomain {
     case resumes
     case positions
 }
 
-extension MovieOpenDomain {
+extension JumpitAPIDomain {
     var url: String {
         switch self {
         case .resumes:
@@ -25,13 +24,13 @@ extension MovieOpenDomain {
     }
 }
 
-protocol MovieOpenAPI: TargetType {
-    var domain: MovieOpenDomain { get }
+protocol JumpitAPIEndpoint: TargetType {
+    var domain: JumpitAPIDomain { get }
     var urlPath: String { get }
     var error: [Int: NetworkError]? { get }
 }
 
-extension MovieOpenAPI {
+extension JumpitAPIEndpoint {
     var baseURL: URL {
         return URL(string: PrivacyInfoManager.baseURL)!
     }

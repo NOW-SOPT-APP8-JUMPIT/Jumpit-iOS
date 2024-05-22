@@ -32,6 +32,7 @@
 		781351812BFD843A003D1730 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781351802BFD843A003D1730 /* NetworkError.swift */; };
 		781351832BFD845C003D1730 /* NewworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781351822BFD845C003D1730 /* NewworkProvider.swift */; };
 		781351852BFD8471003D1730 /* PrivacyInfoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781351842BFD8471003D1730 /* PrivacyInfoManager.swift */; };
+		781351872BFD8AB4003D1730 /* JumpitAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781351862BFD8AB4003D1730 /* JumpitAPI.swift */; };
 		784A19992BF1B0BF003F19C8 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 784A19902BF1B0BE003F19C8 /* Pretendard-Medium.otf */; };
 		784A199A2BF1B0BF003F19C8 /* Pretendard-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 784A19912BF1B0BE003F19C8 /* Pretendard-Thin.otf */; };
 		784A199B2BF1B0BF003F19C8 /* Pretendard-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 784A19922BF1B0BE003F19C8 /* Pretendard-Light.otf */; };
@@ -79,6 +80,7 @@
 		781351802BFD843A003D1730 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		781351822BFD845C003D1730 /* NewworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewworkProvider.swift; sourceTree = "<group>"; };
 		781351842BFD8471003D1730 /* PrivacyInfoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyInfoManager.swift; sourceTree = "<group>"; };
+		781351862BFD8AB4003D1730 /* JumpitAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JumpitAPI.swift; sourceTree = "<group>"; };
 		784A19902BF1B0BE003F19C8 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
 		784A19912BF1B0BE003F19C8 /* Pretendard-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Thin.otf"; sourceTree = "<group>"; };
 		784A19922BF1B0BE003F19C8 /* Pretendard-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Light.otf"; sourceTree = "<group>"; };
@@ -238,6 +240,7 @@
 		781351762BFD7FCE003D1730 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				781351862BFD8AB4003D1730 /* JumpitAPI.swift */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -455,6 +458,7 @@
 				2D43327A2BF665C80017A23B /* SearchResultHeaderView.swift in Sources */,
 				2D43325E2BF5F1AD0017A23B /* SearchResultCollectionViewCell.swift in Sources */,
 				7813517F2BFD838A003D1730 /* JumpitManager.swift in Sources */,
+				781351872BFD8AB4003D1730 /* JumpitAPI.swift in Sources */,
 				7852BD172BEB41D20037BA7E /* AppDelegate.swift in Sources */,
 				2D4332712BF651720017A23B /* CategoryModel.swift in Sources */,
 				2D4332602BF63C330017A23B /* CustomNavigationBarView.swift in Sources */,
@@ -612,6 +616,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				BaseURL = "http://13.124.231.172/api/v1";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = D2DRA3F792;
@@ -639,6 +644,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				BaseURL = "http://13.124.231.172/api/v1";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = D2DRA3F792;
