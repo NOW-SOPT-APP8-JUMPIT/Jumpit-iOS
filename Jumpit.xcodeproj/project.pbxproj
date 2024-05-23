@@ -50,7 +50,6 @@
 		DDB170692BFFCB7200CD9E9C /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = DDB1705B2BFFCB7100CD9E9C /* Pretendard-SemiBold.otf */; };
 		DDB1706A2BFFCB7200CD9E9C /* Pretendard-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = DDB1705C2BFFCB7100CD9E9C /* Pretendard-Thin.otf */; };
 		DDB1706B2BFFCB7200CD9E9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDB1705E2BFFCB7100CD9E9C /* Assets.xcassets */; };
-		DDB1706C2BFFCB7200CD9E9C /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DDB1705F2BFFCB7100CD9E9C /* Info.plist */; };
 		DDB1706F2BFFCBAB00CD9E9C /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB1706E2BFFCBAB00CD9E9C /* UIFont+.swift */; };
 		DDF572052BEF50CE0014C742 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = DDF572042BEF50CE0014C742 /* SnapKit */; };
 		DDF572082BEF51070014C742 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = DDF572072BEF51070014C742 /* Moya */; };
@@ -452,7 +451,6 @@
 				DDB170652BFFCB7200CD9E9C /* Pretendard-ExtraLight.otf in Resources */,
 				DDB170642BFFCB7200CD9E9C /* Pretendard-ExtraBold.otf in Resources */,
 				DDB170682BFFCB7200CD9E9C /* Pretendard-Regular.otf in Resources */,
-				DDB1706C2BFFCB7200CD9E9C /* Info.plist in Resources */,
 				DDB170692BFFCB7200CD9E9C /* Pretendard-SemiBold.otf in Resources */,
 				7852BD232BEB41D30037BA7E /* LaunchScreen.storyboard in Resources */,
 				DDB170662BFFCB7200CD9E9C /* Pretendard-Light.otf in Resources */,
@@ -642,7 +640,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = D2DRA3F792;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Jumpit/Info.plist;
+				INFOPLIST_FILE = Jumpit/Resource/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -669,7 +667,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = D2DRA3F792;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Jumpit/Info.plist;
+				INFOPLIST_FILE = Jumpit/Resource/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
