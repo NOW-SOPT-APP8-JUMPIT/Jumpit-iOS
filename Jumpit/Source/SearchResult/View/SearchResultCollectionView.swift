@@ -21,7 +21,7 @@ final class SearchResultCollectionView: UIView {
         collectionViewLayout: createLayout())
     
     private var categoryData = CategoryModel.dummy()
-    private var searchResultData = SearchResultModel.dummy()
+    private var searchResultData = [SearchResultModel]()
     
     // MARK: - init
     override init(frame: CGRect) {
@@ -41,6 +41,12 @@ final class SearchResultCollectionView: UIView {
         collectionView.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
+    }
+    
+    // MARK: Action
+    func updateSearchResults(with newResults: [SearchResultModel]) {
+        searchResultData = newResults
+        collectionView.reloadData()
     }
     
     // MARK: - SetupCollectionView
@@ -66,6 +72,7 @@ final class SearchResultCollectionView: UIView {
                 }
             }, configuration: config)
     }
+    
     private func createCategorySection() -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(widthDimension: .estimated(80), heightDimension: .absolute(34))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
@@ -130,7 +137,7 @@ extension SearchResultCollectionView: UICollectionViewDataSource, UICollectionVi
             guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: SearchResultHeaderView.identifier, for: indexPath) as? SearchResultHeaderView else {
                 return UICollectionReusableView()
             }
-            headerView.dataBind(42)
+            headerView.dataBind(searchResultData.count)
             return headerView
         default:
             return UICollectionReusableView()
