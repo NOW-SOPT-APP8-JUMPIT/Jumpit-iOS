@@ -41,6 +41,16 @@
 		7852BD202BEB41D30037BA7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7852BD1F2BEB41D30037BA7E /* Assets.xcassets */; };
 		7852BD232BEB41D30037BA7E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7852BD212BEB41D30037BA7E /* LaunchScreen.storyboard */; };
 		DD7483E02BFB6FD300ED41A1 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7483DF2BFB6FD300ED41A1 /* UIFont+.swift */; };
+		DDB16FB12BFFBFF400CD9E9C /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB16FB02BFFBFF400CD9E9C /* TabBarController.swift */; };
+		DDB16FF32BFFBFFE00CD9E9C /* ApplyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB16FC62BFFBFFE00CD9E9C /* ApplyViewController.swift */; };
+		DDB16FF62BFFBFFE00CD9E9C /* EmployViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB16FC92BFFBFFE00CD9E9C /* EmployViewController.swift */; };
+		DDB16FF72BFFBFFE00CD9E9C /* HomeSearchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB16FCA2BFFBFFE00CD9E9C /* HomeSearchButton.swift */; };
+		DDB16FF82BFFBFFE00CD9E9C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB16FCB2BFFBFFE00CD9E9C /* HomeViewController.swift */; };
+		DDB16FFA2BFFBFFE00CD9E9C /* JobView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB16FCD2BFFBFFE00CD9E9C /* JobView.swift */; };
+		DDB16FFC2BFFBFFE00CD9E9C /* PassnoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB16FD02BFFBFFE00CD9E9C /* PassnoteViewController.swift */; };
+		DDB170062BFFBFFE00CD9E9C /* ResumeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB16FDA2BFFBFFE00CD9E9C /* ResumeViewController.swift */; };
+		DDB170092BFFBFFE00CD9E9C /* ThemeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB16FDD2BFFBFFE00CD9E9C /* ThemeCollectionViewCell.swift */; };
+		DDB170112BFFC15900CD9E9C /* ImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB170102BFFC15900CD9E9C /* ImageModel.swift */; };
 		DDF572052BEF50CE0014C742 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = DDF572042BEF50CE0014C742 /* SnapKit */; };
 		DDF572082BEF51070014C742 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = DDF572072BEF51070014C742 /* Moya */; };
 		DDF5720B2BEF512C0014C742 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = DDF5720A2BEF512C0014C742 /* Kingfisher */; };
@@ -84,6 +94,16 @@
 		7852BD222BEB41D30037BA7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7852BD242BEB41D30037BA7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DD7483DF2BFB6FD300ED41A1 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
+		DDB16FB02BFFBFF400CD9E9C /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		DDB16FC62BFFBFFE00CD9E9C /* ApplyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplyViewController.swift; sourceTree = "<group>"; };
+		DDB16FC92BFFBFFE00CD9E9C /* EmployViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployViewController.swift; sourceTree = "<group>"; };
+		DDB16FCA2BFFBFFE00CD9E9C /* HomeSearchButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeSearchButton.swift; sourceTree = "<group>"; };
+		DDB16FCB2BFFBFFE00CD9E9C /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		DDB16FCD2BFFBFFE00CD9E9C /* JobView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobView.swift; sourceTree = "<group>"; };
+		DDB16FD02BFFBFFE00CD9E9C /* PassnoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassnoteViewController.swift; sourceTree = "<group>"; };
+		DDB16FDA2BFFBFFE00CD9E9C /* ResumeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResumeViewController.swift; sourceTree = "<group>"; };
+		DDB16FDD2BFFBFFE00CD9E9C /* ThemeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeCollectionViewCell.swift; sourceTree = "<group>"; };
+		DDB170102BFFC15900CD9E9C /* ImageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -267,6 +287,11 @@
 			isa = PBXGroup;
 			children = (
 				DDE8020D2BFCF588000E8461 /* Core */,
+				DDB1700B2BFFC01400CD9E9C /* Home */,
+				DDB1700F2BFFC0E000CD9E9C /* Resume */,
+				DDB1700E2BFFC0D700CD9E9C /* Passnote */,
+				DDB1700D2BFFC0CF00CD9E9C /* Employ */,
+				DDB1700C2BFFC0C000CD9E9C /* Apply */,
 				784A19A22BF1B2BD003F19C8 /* Detail */,
 				DDE802102BFCF5A8000E8461 /* Search */,
 			);
@@ -292,9 +317,78 @@
 			name = Extension;
 			sourceTree = "<group>";
 		};
+		DDB1700B2BFFC01400CD9E9C /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				DDB170132BFFC1A400CD9E9C /* Model */,
+				DDB170142BFFC1AC00CD9E9C /* View */,
+				DDB170122BFFC19500CD9E9C /* ViewController */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
+		DDB1700C2BFFC0C000CD9E9C /* Apply */ = {
+			isa = PBXGroup;
+			children = (
+				DDB16FC62BFFBFFE00CD9E9C /* ApplyViewController.swift */,
+			);
+			name = Apply;
+			sourceTree = "<group>";
+		};
+		DDB1700D2BFFC0CF00CD9E9C /* Employ */ = {
+			isa = PBXGroup;
+			children = (
+				DDB16FC92BFFBFFE00CD9E9C /* EmployViewController.swift */,
+			);
+			name = Employ;
+			sourceTree = "<group>";
+		};
+		DDB1700E2BFFC0D700CD9E9C /* Passnote */ = {
+			isa = PBXGroup;
+			children = (
+				DDB16FD02BFFBFFE00CD9E9C /* PassnoteViewController.swift */,
+			);
+			name = Passnote;
+			sourceTree = "<group>";
+		};
+		DDB1700F2BFFC0E000CD9E9C /* Resume */ = {
+			isa = PBXGroup;
+			children = (
+				DDB16FDA2BFFBFFE00CD9E9C /* ResumeViewController.swift */,
+			);
+			name = Resume;
+			sourceTree = "<group>";
+		};
+		DDB170122BFFC19500CD9E9C /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				DDB16FCB2BFFBFFE00CD9E9C /* HomeViewController.swift */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		DDB170132BFFC1A400CD9E9C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DDB170102BFFC15900CD9E9C /* ImageModel.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		DDB170142BFFC1AC00CD9E9C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DDB16FDD2BFFBFFE00CD9E9C /* ThemeCollectionViewCell.swift */,
+				DDB16FCD2BFFBFFE00CD9E9C /* JobView.swift */,
+				DDB16FCA2BFFBFFE00CD9E9C /* HomeSearchButton.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		DDE8020D2BFCF588000E8461 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				DDB16FB02BFFBFF400CD9E9C /* TabBarController.swift */,
 				2D4332892BF69CED0017A23B /* LeftAlignedCollectionViewFlowLayout.swift */,
 				2D43325F2BF63C330017A23B /* CustomNavigationBarView.swift */,
 			);
@@ -404,19 +498,28 @@
 			files = (
 				2D4332852BF68A740017A23B /* JobOptionCollectionViewCell.swift in Sources */,
 				2D43325D2BF5F1AD0017A23B /* RecentSearchTableViewCell.swift in Sources */,
+				DDB16FFA2BFFBFFE00CD9E9C /* JobView.swift in Sources */,
+				DDB16FFC2BFFBFFE00CD9E9C /* PassnoteViewController.swift in Sources */,
 				2D43328A2BF69CED0017A23B /* LeftAlignedCollectionViewFlowLayout.swift in Sources */,
 				2D43325C2BF5F1AD0017A23B /* RecentSearchViewController.swift in Sources */,
 				2D4332882BF68F4E0017A23B /* SortCategoryView.swift in Sources */,
+				DDB16FF82BFFBFFE00CD9E9C /* HomeViewController.swift in Sources */,
 				2D43327A2BF665C80017A23B /* SearchResultHeaderView.swift in Sources */,
 				2D43325E2BF5F1AD0017A23B /* SearchResultCollectionViewCell.swift in Sources */,
 				7852BD172BEB41D20037BA7E /* AppDelegate.swift in Sources */,
 				2D4332712BF651720017A23B /* CategoryModel.swift in Sources */,
+				DDB16FF72BFFBFFE00CD9E9C /* HomeSearchButton.swift in Sources */,
+				DDB16FF62BFFBFFE00CD9E9C /* EmployViewController.swift in Sources */,
+				DDB170062BFFBFFE00CD9E9C /* ResumeViewController.swift in Sources */,
+				DDB16FB12BFFBFF400CD9E9C /* TabBarController.swift in Sources */,
 				2D4332602BF63C330017A23B /* CustomNavigationBarView.swift in Sources */,
 				2D43327C2BF6744E0017A23B /* SortCategoryViewController.swift in Sources */,
 				DD7483E02BFB6FD300ED41A1 /* UIFont+.swift in Sources */,
 				2D43326B2BF642590017A23B /* RecentSearchModel.swift in Sources */,
 				2D43326F2BF6509E0017A23B /* SearchResultViewItem.swift in Sources */,
 				2D4332832BF6856B0017A23B /* ModalPresentationController.swift in Sources */,
+				DDB170112BFFC15900CD9E9C /* ImageModel.swift in Sources */,
+				DDB170092BFFBFFE00CD9E9C /* ThemeCollectionViewCell.swift in Sources */,
 				2D4332682BF6402E0017A23B /* SearchResultCollectionView.swift in Sources */,
 				2D43325B2BF5F1AD0017A23B /* RecentSearchView.swift in Sources */,
 				2D4332622BF63DBD0017A23B /* SearchResultViewController.swift in Sources */,
@@ -425,6 +528,7 @@
 				784A19A42BF1B2DB003F19C8 /* DetailViewController.swift in Sources */,
 				2D4332812BF6836F0017A23B /* SelectedJobOptionsModel.swift in Sources */,
 				2D4332732BF652020017A23B /* SearchResultModel.swift in Sources */,
+				DDB16FF32BFFBFFE00CD9E9C /* ApplyViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

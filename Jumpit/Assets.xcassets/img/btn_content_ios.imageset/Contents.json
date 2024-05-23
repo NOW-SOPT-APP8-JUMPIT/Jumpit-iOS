@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "btn_content_ios.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
