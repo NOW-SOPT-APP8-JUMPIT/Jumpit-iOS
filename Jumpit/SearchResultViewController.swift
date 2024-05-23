@@ -92,7 +92,7 @@ extension SearchResultViewController: SearchResultCollectionViewDelegate {
     }
     
     func didSelectSearchResultCell() {
-        let VC = DetailViewController()
+        let VC = ViewController()
         navigationController?.pushViewController(VC, animated: true)
     }
 }
