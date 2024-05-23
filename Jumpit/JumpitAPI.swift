@@ -17,27 +17,20 @@ enum JumpitAPI {
     case fetchPositionDetail(positionId: String)
 }
 
-extension JumpitAPI: TargetType {
-    var baseURL: URL {
-        guard let urlString = Bundle.main.object(forInfoDictionaryKey: "BaseURL") as? String,
-              let url = URL(string: urlString) else {
-            fatalError("BaseURL not set in plist for this environment")
+extension JumpitAPI: JumpitBaseAPI {
+    var domain: JumpitAPIDomain {
+            return .resumes
         }
-        return url
     }
 
     var path: String {
         switch self {
         case .postResume:
-            return "/resumes"
+            return ""
         case .fetchMyResume(let userId):
-            return "/resumes/\(userId)"
+            return "/\(userId)"
         case .toggleResumePrivacy(let resumeId):
-            return "/resumes/\(resumeId)"
-        case .searchPositions, .searchPositionsFiltered:
-            return "/positions"
-        case .fetchPositionDetail(let positionId):
-            return "/positions/\(positionId)"
+            return "/\(resumeId)"
         }
     }
 
