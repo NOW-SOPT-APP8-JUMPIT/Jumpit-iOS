@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 import Then
 import SnapKit
 
@@ -109,6 +110,39 @@ extension SearchResultCollectionViewCell {
     func dataBind(_ searchResult: SearchResultModel) {
         enterpriseNameLabel.text = searchResult.enterpriseName
         recruitmentNoticeLabel.text = searchResult.recruitmentNotice
-        technologyStackLabel.text = searchResult.technologyStack.joined(separator: " · ") 
+        technologyStackLabel.text = searchResult.technologyStack.joined(separator: " · ")
+        
+        let convertedLink = convertGoogleDriveLink(searchResult.enterpriseImage)
+        
+        if let url = URL(string: convertedLink) {
+            enterpriseImageView.kf.setImage(
+                with: url,
+                placeholder: UIImage(named: "placeholderImage"),
+                options: [
+                    .transition(.fade(0.2)),
+                    .cacheOriginalImage
+                ],
+                completionHandler: { result in
+                    switch result {
+                    case .success(_): break
+                    case .failure(let error):
+                        print("Failed to load image: \(error.localizedDescription)")
+                    }
+                }
+            )
+        } else {
+            print("Invalid URL string: \(searchResult.enterpriseImage)")
+        }
+    }
+    
+    // Google Drive 공유 링크를 직접 접근 링크로 변환하는 함수
+    private func convertGoogleDriveLink(_ link: String) -> String {
+        if link.contains("drive.google.com") {
+            if let fileId = link.split(separator: "/").dropLast().last {
+                return "https://drive.google.com/uc?export=view&id=\(fileId)"
+            }
+        }
+        return link
     }
 }
+
