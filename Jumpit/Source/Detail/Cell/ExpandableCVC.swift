@@ -3,6 +3,7 @@
 //  Jumpit
 //
 //  Created by 이지훈 on 5/14/24.
+
 import UIKit
 import SnapKit
 import Then
@@ -30,9 +31,13 @@ class ExpandableJobCell: UICollectionViewCell {
         $0.font = UIFont(name: "Pretendard-Regular", size: 14)
     }
     
-    private let separatorView = UIView().then {
-        $0.backgroundColor = .jumpitGray1
+    private let stackContainerView = UIView().then {
         $0.isHidden = true
+    }
+    
+    private let separatorView = UIView().then {
+        $0.backgroundColor = UIColor(named: "gray1")
+        $0.isHidden = false
     }
     
     private let arrowIndicator = UIImageView().then {
@@ -46,6 +51,7 @@ class ExpandableJobCell: UICollectionViewCell {
         $0.spacing = 8
         $0.addArrangedSubview(titleLabel)
         $0.addArrangedSubview(jobDetailLabel)
+        $0.addArrangedSubview(stackContainerView)
     }
     
     // MARK: - Initialization
@@ -77,10 +83,8 @@ class ExpandableJobCell: UICollectionViewCell {
             $0.leading.equalToSuperview().inset(8)
             $0.trailing.equalToSuperview().inset(8)
             $0.height.equalTo(2)
-            $0.top.equalTo(jobDetailLabel.snp.bottom).offset(10)
             $0.bottom.equalToSuperview().offset(-10)
         }
-        
         
         addSubview(arrowIndicator)
         arrowIndicator.snp.makeConstraints {
@@ -90,32 +94,103 @@ class ExpandableJobCell: UICollectionViewCell {
     }
     
     // MARK: - Update Content
-    func updateContent() {
-            guard let detail = detail else { return }
-            titleLabel.text = detail.titles.joined(separator: ", ")
-            jobDetailLabel.text = detail.jobDetail
-            separatorView.isHidden = false
+    private func updateContent() {
+        guard let detail = detail else { return }
+        titleLabel.text = detail.titles.joined(separator: ", ")
+        jobDetailLabel.text = detail.jobDetail
+        
+        stackContainerView.subviews.forEach { $0.removeFromSuperview() }
+        
+        if let skills = detail.skills {
+            stackContainerView.isHidden = false
+            
+            var lastSkillView: UIView? = nil
+            for skill in skills {
+                let skillView = UIView().then {
+                    $0.backgroundColor = .jumpitGray1
+                    $0.layer.cornerRadius = 5
+                }
+                
+                let imageView = UIImageView().then {
+                    $0.contentMode = .scaleAspectFill
+                    $0.clipsToBounds = true
+                }
+                if let url = URL(string: skill.image ?? ""), let data = try? Data(contentsOf: url) {
+                    imageView.image = UIImage(data: data)
+                }
+                
+                let skillLabel = UILabel().then {
+                    $0.font = UIFont(name: "Pretendard-Regular", size: 12)
+                    $0.text = skill.name
+                }
+                
+                skillView.addSubview(imageView)
+                skillView.addSubview(skillLabel)
+                
+                imageView.snp.makeConstraints {
+                    $0.leading.equalToSuperview().offset(10)
+                    $0.centerY.equalToSuperview()
+                    $0.size.equalTo(20)
+                }
+                
+                skillLabel.snp.makeConstraints {
+                    $0.leading.equalTo(imageView.snp.trailing).offset(10)
+                    $0.centerY.equalToSuperview()
+                    $0.trailing.equalToSuperview().offset(-10)
+                }
+                
+                skillView.snp.makeConstraints {
+                    $0.height.equalTo(31)
+                    $0.width.greaterThanOrEqualTo(0)
+                }
+                
+                stackContainerView.addSubview(skillView)
+                skillView.snp.makeConstraints { make in
+                    make.top.equalToSuperview().offset(10)
+                    if let lastSkillView = lastSkillView {
+                        make.leading.equalTo(lastSkillView.snp.trailing).offset(10)
+                    } else {
+                        make.leading.equalToSuperview().offset(10)
+                    }
+                    make.bottom.equalToSuperview().offset(-10)
+                }
+                
+                lastSkillView = skillView
+            }
         }
+    }
     
     // MARK: - Update Appearance
-     private func updateAppearance() {
-         jobDetailLabel.isHidden = !isExpanded
-         arrowIndicator.transform = isExpanded ? CGAffineTransform(rotationAngle: .pi) : .identity
-         
-         jobDetailLabel.snp.remakeConstraints { make in
-             if isExpanded {
-                 make.top.equalTo(titleLabel.snp.bottom).offset(20)
-                 make.leading.trailing.equalToSuperview().inset(8)
-                 make.bottom.lessThanOrEqualTo(separatorView.snp.top).offset(-10)
-             } else {
-                 make.top.equalTo(titleLabel.snp.bottom).offset(10)
-                 make.leading.trailing.equalToSuperview().inset(8)
-                 make.bottom.lessThanOrEqualTo(separatorView.snp.top).offset(-10)
-             }
-         }
-         
-         UIView.animate(withDuration: 0.3) {
-             self.layoutIfNeeded()
-         }
-     }
+    private func updateAppearance() {
+        jobDetailLabel.isHidden = !isExpanded
+        stackContainerView.isHidden = !isExpanded || (detail?.skills == nil)
+        separatorView.isHidden = false
+        arrowIndicator.transform = isExpanded ? CGAffineTransform(rotationAngle: .pi) : .identity
+        
+        if isExpanded {
+            jobDetailLabel.snp.remakeConstraints {
+                $0.top.equalTo(titleLabel.snp.bottom).offset(20)
+                $0.leading.trailing.equalToSuperview().inset(8)
+            }
+            stackContainerView.snp.remakeConstraints {
+                $0.top.equalTo(jobDetailLabel.snp.bottom).offset(10)
+                $0.leading.trailing.equalToSuperview().inset(8)
+                $0.bottom.lessThanOrEqualTo(separatorView.snp.top).offset(-10)
+            }
+        } else {
+            jobDetailLabel.snp.remakeConstraints {
+                $0.top.equalTo(titleLabel.snp.bottom).offset(10)
+                $0.leading.trailing.equalToSuperview().inset(8)
+                $0.bottom.equalTo(separatorView.snp.top).offset(-10)
+            }
+            stackContainerView.snp.remakeConstraints {
+                $0.top.equalTo(jobDetailLabel.snp.bottom)
+                $0.leading.trailing.equalToSuperview().inset(8)
+            }
+        }
+        
+        UIView.animate(withDuration: 0.3) {
+            self.layoutIfNeeded()
+        }
+    }
 }
