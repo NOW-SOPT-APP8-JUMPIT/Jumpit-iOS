@@ -5,13 +5,18 @@
 //  Created by 이지훈 on 5/13/24.
 //
 import UIKit
+
 import SnapKit
+import Moya
+
 
 class DetailVC: UIViewController {
     
     private var collectionView: UICollectionView!
     private var dataSource: UICollectionViewDiffableDataSource<Section, AnyHashable>!
     private var bottomRegisterViewController = BottomRegisterViewController()
+    private let networkProvider = NetworkProvider<PositionsAPI>()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +26,7 @@ class DetailVC: UIViewController {
         configureDataSource()
         applyInitialSnapshots()
         addBottomRegisterView()
+        fetchPositionDetail()
     }
     
     private func configureCollectionView() {
@@ -153,8 +159,6 @@ class DetailVC: UIViewController {
     private func applyInitialSnapshots() {
         var snapshot = NSDiffableDataSourceSnapshot<Section, AnyHashable>()
         snapshot.appendSections([.jobDetail, .expandable, .differentJobDetail, .companyInfo, .positionDetail, .rewardDetail])
-        snapshot.appendItems(MockData.jobDetails, toSection: .jobDetail)
-        snapshot.appendItems(MockData.expandableDetails, toSection: .expandable)
         snapshot.appendItems(MockData.differentJobDetails, toSection: .differentJobDetail)
         snapshot.appendItems(MockData.companyInfo, toSection: .companyInfo)
         snapshot.appendItems(MockData.positionDetails, toSection: .positionDetail)
@@ -263,6 +267,100 @@ class DetailVC: UIViewController {
         let section = NSCollectionLayoutSection(group: group)
         
         return section
+    }
+    
+    
+    private func fetchPositionDetail() {
+        let positionId = "1" // 전달받은 positionId를 사용
+        networkProvider.request(api: .fetchPositionDetail(positionId: positionId)) { [weak self] result in
+            switch result {
+            case .success(let response):
+                do {
+                    let decoder = JSONDecoder()
+                    let resturantResponse = try decoder.decode(ResturantResponse.self, from: response.data)
+                    
+                    guard let data = resturantResponse.data else {
+                        return
+                    }
+                    
+                    // Mapping Position and Company to JobDetail
+                    let position = data.position
+                    let company = data.company
+                    let jobDetail = JobDetail(
+                        image: self?.loadImage(from: company?.image),
+                        title: position?.title ?? "",
+                        description: company?.description ?? "",
+                        careerLabel: "경력",
+                        educationLabel: "학력",
+                        deadlineLabel: "마감일",
+                        locationLabel: "근무지",
+                        career: position?.career ?? "",
+                        education: position?.education ?? "",
+                        deadline: position?.deadline ?? "",
+                        location: position?.location ?? ""
+                    )
+                    
+                    // Mapping Skills to ExpandableJobDetail
+                    let skillsDetails = data.skills?.map { "\($0.name ?? ""): \($0.image ?? "")" }.joined(separator: "\n") ?? ""
+                    let expandableJobDetails: [ExpandableJobDetail] = [
+                        ExpandableJobDetail(
+                            isExpanded: false,
+                            titles: ["기술스택"],
+                            jobDetail: skillsDetails
+                        ),
+                        ExpandableJobDetail(
+                            isExpanded: false,
+                            titles: ["주요업무"],
+                            jobDetail: position?.responsibilities ?? ""
+                        ),
+                        ExpandableJobDetail(
+                            isExpanded: false,
+                            titles: ["자격요건"],
+                            jobDetail: position?.qualifications ?? ""
+                        ),
+                        ExpandableJobDetail(
+                            isExpanded: false,
+                            titles: ["우대사항"],
+                            jobDetail: position?.preferred ?? ""
+                        ),
+                        ExpandableJobDetail(
+                            isExpanded: false,
+                            titles: ["혜택 및 복지"],
+                            jobDetail: position?.benefits ?? ""
+                        ),
+                        ExpandableJobDetail(
+                            isExpanded: false,
+                            titles: ["채용절차 및 기타"],
+                            jobDetail: position?.notice ?? ""
+                        )
+                    ]
+                    
+                    self?.updateUI(with: jobDetail, expandableJobDetails: expandableJobDetails)
+                } catch {
+                    print("Decoding error: \(error)")
+                }
+            case .failure(let error):
+                print("Network error: \(error)")
+            }
+        }
+    }
+    
+    //서버에서 이미지 수정하면 그떄 수정
+    private func loadImage(from urlString: String?) -> UIImage? {
+        guard let urlString = urlString, let url = URL(string: urlString) else {
+            return nil
+        }
+        if let data = try? Data(contentsOf: url) {
+            return UIImage(data: data)
+        }
+        return nil
+    }
+    
+    private func updateUI(with jobDetail: JobDetail, expandableJobDetails: [ExpandableJobDetail]) {
+        var snapshot = dataSource.snapshot()
+        snapshot.appendItems([jobDetail], toSection: .jobDetail)
+        snapshot.appendItems(expandableJobDetails, toSection: .expandable)
+        dataSource.apply(snapshot, animatingDifferences: true)
     }
     
 }
