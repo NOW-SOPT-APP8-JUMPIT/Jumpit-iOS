@@ -187,8 +187,8 @@ extension SearchResultViewController: SearchResultCollectionViewDelegate {
     }
     
     func didSelectSearchResultCell() {
-        let VC = DetailViewController()
-        navigationController?.pushViewController(VC, animated: true)
+     //   let VC = DetailViewController()
+  //      navigationController?.pushViewController(VC, animated: true)
     }
 }
 
