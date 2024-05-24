@@ -45,7 +45,13 @@ class ResumeViewController: UIViewController {
         $0.addTarget(self, action: #selector(didResumeAddButtonTapped), for: .touchUpInside)
     }
     
-//    private lazy var
+    private lazy var resumeCollectionView: UICollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout().then {
+        $0.scrollDirection = .horizontal
+        $0.minimumLineSpacing = 13
+    }).then {
+        $0.showsHorizontalScrollIndicator = false
+        $0.register(ResumeCollectionViewCell.self, forCellWithReuseIdentifier: ResumeCollectionViewCell.cellID)
+    }
     
     private let blankResumeImageView: UIImageView = UIImageView().then {
         $0.image = .imgNoResume
@@ -83,7 +89,6 @@ class ResumeViewController: UIViewController {
     private lazy var fileAddButton: UIButton = UIButton().then {
         $0.setImage(.icnAdd, for: .normal)
         $0.contentMode = .scaleAspectFill
-        $0.addTarget(self, action: #selector(didFileAddButtonTapped), for: .touchUpInside)
     }
     
     private let blankFileImageView: UIImageView = UIImageView().then {
@@ -109,6 +114,9 @@ class ResumeViewController: UIViewController {
         setNavigationBar()
         setLayout()
         setConstraint()
+        setDelegate()
+        setUpNotification()
+        
     }
     
     private func setNavigationBar() {
@@ -121,7 +129,7 @@ class ResumeViewController: UIViewController {
         view.backgroundColor = .white
         
         [
-            myResumeInfoLabel, resumeNumberLabel, resumeHelpButton, resumeAddButton, blankResumeImageView, seperateView, fileInfoLabel, fileNumberLabel, fileHelpButton, fileAddButton, blankFileImageView, ellipseView, fileDescriptionLabel, filePopupImageView, resumePopupImageView
+            myResumeInfoLabel, resumeNumberLabel, resumeHelpButton, resumeAddButton, blankResumeImageView, resumeCollectionView, seperateView, fileInfoLabel, fileNumberLabel, fileHelpButton, fileAddButton, blankFileImageView, ellipseView, fileDescriptionLabel, filePopupImageView, resumePopupImageView
         ].forEach {
             view.addSubview($0)
         }
@@ -154,7 +162,12 @@ class ResumeViewController: UIViewController {
             $0.top.equalTo(myResumeInfoLabel.snp.bottom).offset(25)
             $0.leading.equalTo(myResumeInfoLabel)
             $0.trailing.equalToSuperview().inset(16)
-            $0.height.equalTo(178)
+            $0.height.equalTo(188)
+        }
+        
+        resumeCollectionView.snp.makeConstraints {
+            $0.top.leading.bottom.equalTo(blankResumeImageView)
+            $0.trailing.equalToSuperview()
         }
         
         seperateView.snp.makeConstraints {
@@ -218,6 +231,25 @@ class ResumeViewController: UIViewController {
         }
     }
     
+    private func setDelegate() {
+        resumeCollectionView.dataSource = self
+        resumeCollectionView.delegate = self
+    }
+    
+    private func setUpNotification() {
+        NotificationCenter.default.addObserver(self, selector: #selector(didOptionButtonTapped), name: NSNotification.Name("editPopUpPresented"), object: nil)
+    }
+    
+    @objc
+    private func didOptionButtonTapped() {
+        let resumeEditViewController = ResumeEditViewController()
+        
+        resumeEditViewController.modalTransitionStyle = .crossDissolve
+        resumeEditViewController.modalPresentationStyle = .overFullScreen
+        
+        self.present(resumeEditViewController, animated: true)
+    }
+    
     @objc
     private func didResumeHelpButtonTapped() {
         resumePopupImageView.isHidden.toggle()
@@ -227,7 +259,12 @@ class ResumeViewController: UIViewController {
     
     @objc
     private func didResumeAddButtonTapped() {
+        let resumeAddViewController = ResumeAddViewController()
         
+        resumeAddViewController.modalTransitionStyle = .crossDissolve
+        resumeAddViewController.modalPresentationStyle = .overFullScreen
+        
+        self.present(resumeAddViewController, animated: true)
     }
     
     @objc
@@ -236,9 +273,23 @@ class ResumeViewController: UIViewController {
         
         filePopupImageView.isHidden ? fileHelpButton.setImage(.icnHelp, for: .normal) : fileHelpButton.setImage(.icnHelpSelect, for: .normal)
     }
+}
+
+
+extension ResumeViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+      return CGSize(width: 358, height: 188)
+    }
+}
+
+extension ResumeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 2
+    }
     
-    @objc
-    private func didFileAddButtonTapped() {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ResumeCollectionViewCell.cellID, for: indexPath) as? ResumeCollectionViewCell else { return UICollectionViewCell() }
         
+        return cell
     }
 }

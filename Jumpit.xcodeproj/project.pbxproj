@@ -10,6 +10,10 @@
 		7852BD172BEB41D20037BA7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7852BD162BEB41D20037BA7E /* AppDelegate.swift */; };
 		7852BD192BEB41D20037BA7E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7852BD182BEB41D20037BA7E /* SceneDelegate.swift */; };
 		7852BD232BEB41D30037BA7E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7852BD212BEB41D30037BA7E /* LaunchScreen.storyboard */; };
+		DD8B97C12C0029B4001D9DBA /* ResumeAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8B97C02C0029B4001D9DBA /* ResumeAddViewController.swift */; };
+		DD8B97C32C002C37001D9DBA /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8B97C22C002C37001D9DBA /* UIView+.swift */; };
+		DD8B97C52C00327E001D9DBA /* ResumeEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8B97C42C00327E001D9DBA /* ResumeEditViewController.swift */; };
+		DD8B97C92C00349E001D9DBA /* ResumeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8B97C82C00349E001D9DBA /* ResumeCollectionViewCell.swift */; };
 		DDB170362BFFCB6B00CD9E9C /* ApplyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB170172BFFCB6B00CD9E9C /* ApplyViewController.swift */; };
 		DDB170372BFFCB6B00CD9E9C /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB170182BFFCB6B00CD9E9C /* CategoryModel.swift */; };
 		DDB170382BFFCB6B00CD9E9C /* CustomNavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB170192BFFCB6B00CD9E9C /* CustomNavigationBarView.swift */; };
@@ -62,6 +66,10 @@
 		7852BD162BEB41D20037BA7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7852BD182BEB41D20037BA7E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		7852BD222BEB41D30037BA7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DD8B97C02C0029B4001D9DBA /* ResumeAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeAddViewController.swift; sourceTree = "<group>"; };
+		DD8B97C22C002C37001D9DBA /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
+		DD8B97C42C00327E001D9DBA /* ResumeEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeEditViewController.swift; sourceTree = "<group>"; };
+		DD8B97C82C00349E001D9DBA /* ResumeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeCollectionViewCell.swift; sourceTree = "<group>"; };
 		DDB170172BFFCB6B00CD9E9C /* ApplyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplyViewController.swift; sourceTree = "<group>"; };
 		DDB170182BFFCB6B00CD9E9C /* CategoryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
 		DDB170192BFFCB6B00CD9E9C /* CustomNavigationBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationBarView.swift; sourceTree = "<group>"; };
@@ -149,6 +157,24 @@
 			path = Jumpit;
 			sourceTree = "<group>";
 		};
+		DD8B97C62C003467001D9DBA /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				DDB170282BFFCB6B00CD9E9C /* ResumeViewController.swift */,
+				DD8B97C02C0029B4001D9DBA /* ResumeAddViewController.swift */,
+				DD8B97C42C00327E001D9DBA /* ResumeEditViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		DD8B97C72C003477001D9DBA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DD8B97C82C00349E001D9DBA /* ResumeCollectionViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		DDB170352BFFCB6B00CD9E9C /* Source */ = {
 			isa = PBXGroup;
 			children = (
@@ -197,6 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				DDB1706E2BFFCBAB00CD9E9C /* UIFont+.swift */,
+				DD8B97C22C002C37001D9DBA /* UIView+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -257,7 +284,8 @@
 		DDB170772BFFCC4800CD9E9C /* Resume */ = {
 			isa = PBXGroup;
 			children = (
-				DDB170282BFFCB6B00CD9E9C /* ResumeViewController.swift */,
+				DD8B97C72C003477001D9DBA /* View */,
+				DD8B97C62C003467001D9DBA /* ViewController */,
 			);
 			path = Resume;
 			sourceTree = "<group>";
@@ -473,7 +501,9 @@
 				DDB1703A2BFFCB6B00CD9E9C /* EmployViewController.swift in Sources */,
 				DDB1704C2BFFCB6B00CD9E9C /* SearchResultViewController.swift in Sources */,
 				DDB1703B2BFFCB6B00CD9E9C /* HomeSearchButton.swift in Sources */,
+				DD8B97C32C002C37001D9DBA /* UIView+.swift in Sources */,
 				DDB1704B2BFFCB6B00CD9E9C /* SearchResultModel.swift in Sources */,
+				DD8B97C92C00349E001D9DBA /* ResumeCollectionViewCell.swift in Sources */,
 				DDB1703F2BFFCB6B00CD9E9C /* JobView.swift in Sources */,
 				DDB1703C2BFFCB6B00CD9E9C /* HomeViewController.swift in Sources */,
 				DDB170422BFFCB6B00CD9E9C /* PassnoteViewController.swift in Sources */,
@@ -493,6 +523,8 @@
 				DDB1703E2BFFCB6B00CD9E9C /* JobOptionCollectionViewCell.swift in Sources */,
 				DDB170382BFFCB6B00CD9E9C /* CustomNavigationBarView.swift in Sources */,
 				7852BD192BEB41D20037BA7E /* SceneDelegate.swift in Sources */,
+				DD8B97C12C0029B4001D9DBA /* ResumeAddViewController.swift in Sources */,
+				DD8B97C52C00327E001D9DBA /* ResumeEditViewController.swift in Sources */,
 				DDB170402BFFCB6B00CD9E9C /* LeftAlignedCollectionViewFlowLayout.swift in Sources */,
 				DDB170412BFFCB6B00CD9E9C /* ModalPresentationController.swift in Sources */,
 				DDB1704E2BFFCB6B00CD9E9C /* SelectedJobOptionsModel.swift in Sources */,
