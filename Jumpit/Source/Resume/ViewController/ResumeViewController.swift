@@ -244,6 +244,8 @@ class ResumeViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(didOptionButtonTapped), name: NSNotification.Name("editPopUpPresented"), object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(didResumeStatusChanged(_:)), name: NSNotification.Name("resumeStatusSwitched"), object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(didResumeAdded), name: NSNotification.Name("resumeAdded"), object: nil)
     }
     
     private func retriveResumes() {
@@ -259,6 +261,11 @@ class ResumeViewController: UIViewController {
                 }
             }
         }
+    }
+    
+    @objc
+    private func didResumeAdded() {
+        retriveResumes()
     }
     
     @objc

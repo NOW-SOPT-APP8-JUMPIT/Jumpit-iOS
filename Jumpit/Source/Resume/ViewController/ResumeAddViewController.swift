@@ -121,6 +121,10 @@ class ResumeAddViewController: UIViewController {
                     if responseData.status == 201 {
                         print(responseData.message + "고마워 민지야!")
                         
+                        NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: "resumeAdded"), object: nil))
+                        
+                        self.dismiss(animated: true)
+                        
                     } else {
                         print("Failed to add resume: \(responseData.message)")
                     }
