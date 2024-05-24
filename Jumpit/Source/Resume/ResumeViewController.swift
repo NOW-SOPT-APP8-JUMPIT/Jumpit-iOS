@@ -33,6 +33,12 @@ class ResumeViewController: UIViewController {
         $0.addTarget(self, action: #selector(didResumeHelpButtonTapped), for: .touchUpInside)
     }
     
+    private let resumePopupImageView: UIImageView = UIImageView().then {
+        $0.image = .imgPopupResume
+        $0.contentMode = .scaleAspectFill
+        $0.isHidden = true
+    }
+    
     private lazy var resumeAddButton: UIButton = UIButton().then {
         $0.setImage(.icnAdd, for: .normal)
         $0.contentMode = .scaleAspectFill
@@ -66,6 +72,12 @@ class ResumeViewController: UIViewController {
         $0.setImage(.icnHelp, for: .normal)
         $0.contentMode = .scaleAspectFill
         $0.addTarget(self, action: #selector(didFileHelpButtonTapped), for: .touchUpInside)
+    }
+    
+    private let filePopupImageView: UIImageView = UIImageView().then {
+        $0.image = .imgPopupFile
+        $0.contentMode = .scaleAspectFill
+        $0.isHidden = true
     }
     
     private lazy var fileAddButton: UIButton = UIButton().then {
@@ -109,7 +121,7 @@ class ResumeViewController: UIViewController {
         view.backgroundColor = .white
         
         [
-            myResumeInfoLabel, resumeNumberLabel, resumeHelpButton, resumeAddButton, blankResumeImageView, seperateView, fileInfoLabel, fileNumberLabel, fileHelpButton, fileAddButton, blankFileImageView, ellipseView, fileDescriptionLabel
+            myResumeInfoLabel, resumeNumberLabel, resumeHelpButton, resumeAddButton, blankResumeImageView, seperateView, fileInfoLabel, fileNumberLabel, fileHelpButton, fileAddButton, blankFileImageView, ellipseView, fileDescriptionLabel, filePopupImageView, resumePopupImageView
         ].forEach {
             view.addSubview($0)
         }
@@ -190,11 +202,27 @@ class ResumeViewController: UIViewController {
             $0.centerY.equalTo(ellipseView)
             $0.leading.equalTo(ellipseView.snp.trailing).offset(4)
         }
+        
+        resumePopupImageView.snp.makeConstraints {
+            $0.top.equalTo(resumeHelpButton.snp.bottom).offset(6.5)
+            $0.leading.equalTo(resumeHelpButton)
+            $0.height.equalTo(176)
+            $0.width.equalTo(174)
+        }
+        
+        filePopupImageView.snp.makeConstraints {
+            $0.top.equalTo(fileHelpButton.snp.bottom).offset(6.5)
+            $0.leading.equalTo(fileHelpButton)
+            $0.height.equalTo(94)
+            $0.width.equalTo(174)
+        }
     }
     
     @objc
     private func didResumeHelpButtonTapped() {
+        resumePopupImageView.isHidden.toggle()
         
+        resumePopupImageView.isHidden ? resumeHelpButton.setImage(.icnHelp, for: .normal) : resumeHelpButton.setImage(.icnHelpSelect, for: .normal)
     }
     
     @objc
@@ -204,7 +232,9 @@ class ResumeViewController: UIViewController {
     
     @objc
     private func didFileHelpButtonTapped() {
+        filePopupImageView.isHidden.toggle()
         
+        filePopupImageView.isHidden ? fileHelpButton.setImage(.icnHelp, for: .normal) : fileHelpButton.setImage(.icnHelpSelect, for: .normal)
     }
     
     @objc
