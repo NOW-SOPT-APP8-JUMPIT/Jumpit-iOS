@@ -10,7 +10,7 @@ import Moya
 
 enum ResumesAPI {
     case postResume(data: ResumeData)
-    case fetchMyResume(userId: String)
+    case fetchMyResume(userId: Int)
     case toggleResumePrivacy(resumeId: String)
 }
 
