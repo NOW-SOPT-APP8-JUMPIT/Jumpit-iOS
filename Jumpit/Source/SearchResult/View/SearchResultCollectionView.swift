@@ -10,7 +10,7 @@ import SnapKit
 
 protocol SearchResultCollectionViewDelegate: AnyObject {
     func didSelectCategoryCell()
-    func didSelectSearchResultCell()
+    func didSelectSearchResultCell(at indexPath: IndexPath)
 }
 
 final class SearchResultCollectionView: UIView {
@@ -47,6 +47,9 @@ final class SearchResultCollectionView: UIView {
     func updateSearchResults(with newResults: [SearchResultModel]) {
         searchResultData = newResults
         collectionView.reloadData()
+    }
+    func getCell(at indexPath: IndexPath) -> SearchResultCollectionViewCell? {
+        return collectionView.cellForItem(at: indexPath) as? SearchResultCollectionViewCell
     }
     
     // MARK: - SetupCollectionView
@@ -150,7 +153,7 @@ extension SearchResultCollectionView: UICollectionViewDataSource, UICollectionVi
                 delegate?.didSelectCategoryCell()
             }
         case 1:
-            delegate?.didSelectSearchResultCell()
+            delegate?.didSelectSearchResultCell(at: indexPath)
         default:
             break
         }

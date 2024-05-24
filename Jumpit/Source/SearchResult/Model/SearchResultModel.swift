@@ -8,6 +8,7 @@
 import UIKit
 
 struct SearchResultModel {
+    let positionId: Int
     let enterpriseImage: String
     let enterpriseName: String
     let recruitmentNotice: String
