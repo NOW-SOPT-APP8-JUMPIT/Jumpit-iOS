@@ -266,7 +266,8 @@ final class HomeViewController: UIViewController {
     
     @objc
     private func didSearchButtonTapped() {
-        // TODO: 검색 화면 완성되면 화면 전환 연결
+        let recentSearchVC = RecentSearchViewController()
+        navigationController?.pushViewController(recentSearchVC, animated: true)
     }
 }
 
