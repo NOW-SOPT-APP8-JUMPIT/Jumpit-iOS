@@ -39,6 +39,10 @@ final class SearchResultViewController: UIViewController {
         performSearch()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setNavigationController()
+    }
     
     // MARK: - SetLayout
     private func setLayout() {
