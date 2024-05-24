@@ -17,7 +17,12 @@ class DetailVC: UIViewController {
     private var bottomRegisterViewController = BottomRegisterViewController()
     private let networkProvider = NetworkProvider<PositionsAPI>()
 
-    
+    override func viewWillAppear(_ animated: Bool) {
+            super.viewWillAppear(animated)
+            tabBarController?.tabBar.isHidden = true
+        }
+
+      
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -27,6 +32,11 @@ class DetailVC: UIViewController {
         applyInitialSnapshots()
         addBottomRegisterView()
         fetchPositionDetail()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        tabBarController?.tabBar.isHidden = false
     }
     
     private func configureCollectionView() {
