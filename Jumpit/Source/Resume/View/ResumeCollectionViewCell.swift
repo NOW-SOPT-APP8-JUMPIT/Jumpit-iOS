@@ -51,7 +51,7 @@ class ResumeCollectionViewCell: UICollectionViewCell {
         $0.addTarget(self, action: #selector(didOptionButtonTapped), for: .touchUpInside)
     }
     
-    private let resumeNameLabel: UILabel = UILabel().then {
+    public let resumeNameLabel: UILabel = UILabel().then {
         $0.text = "이력서_240524"
         $0.font = CustomFont.body
         $0.textColor = .black
@@ -75,7 +75,7 @@ class ResumeCollectionViewCell: UICollectionViewCell {
         $0.font = CustomFont.body02
     }
     
-    private lazy var resumeStatusSwitch: UISwitch = UISwitch().then {
+    public lazy var resumeStatusSwitch: UISwitch = UISwitch().then {
         $0.onTintColor = .jumpitGreen
         $0.transform = CGAffineTransform(scaleX: 0.7, y: 0.7)
         $0.addTarget(self, action: #selector(didResumeStatusSwitched), for: .valueChanged)

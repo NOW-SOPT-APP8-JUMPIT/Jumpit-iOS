@@ -10,6 +10,10 @@ import UIKit
 class ResumeViewController: UIViewController {
     
     
+    private var resumeData = [Resume]()
+    
+    private let resumeAPI = ResumeManager()
+    
     private let leftResumeBarButtonItem: UIBarButtonItem = UIBarButtonItem().then {
         $0.title = "이력서"
         $0.setTitleTextAttributes([NSAttributedString.Key.font: CustomFont.title01, NSAttributedString.Key.foregroundColor: UIColor.black], for: .normal)
@@ -116,7 +120,7 @@ class ResumeViewController: UIViewController {
         setConstraint()
         setDelegate()
         setUpNotification()
-        
+        retriveResumes()
     }
     
     private func setNavigationBar() {
@@ -240,6 +244,20 @@ class ResumeViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(didOptionButtonTapped), name: NSNotification.Name("editPopUpPresented"), object: nil)
     }
     
+    private func retriveResumes() {
+        resumeAPI.getMyResume(userId: 1) { result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let resumes):
+                    self.resumeData = resumes
+                    self.resumeCollectionView.reloadData()
+                case .failure(let error):
+                    HandleNetworkError.handleNetworkError(error)
+                }
+            }
+        }
+    }
+    
     @objc
     private func didOptionButtonTapped() {
         let resumeEditViewController = ResumeEditViewController()
@@ -284,11 +302,20 @@ extension ResumeViewController: UICollectionViewDelegateFlowLayout {
 
 extension ResumeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 2
+        return resumeData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ResumeCollectionViewCell.cellID, for: indexPath) as? ResumeCollectionViewCell else { return UICollectionViewCell() }
+        
+        return bindData(cell, indexPath.row)
+    }
+    
+    func bindData(_ bindCell: ResumeCollectionViewCell, _ path: Int) -> ResumeCollectionViewCell {
+        let cell = bindCell
+        
+        cell.resumeNameLabel.text = resumeData[path].title
+        cell.resumeStatusSwitch.isOn = resumeData[path].isPrivate
         
         return cell
     }
