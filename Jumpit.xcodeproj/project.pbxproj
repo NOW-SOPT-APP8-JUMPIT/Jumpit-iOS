@@ -30,6 +30,8 @@
 		784DDEB22C0051D60061B432 /* BottomRegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784DDEA82C0051D60061B432 /* BottomRegisterVC.swift */; };
 		784DDEB82C0052970061B432 /* PrivacyInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 784DDEB72C0052970061B432 /* PrivacyInfo.plist */; };
 		784DDEBA2C0053250061B432 /* CompanyDetailResonseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784DDEB92C0053250061B432 /* CompanyDetailResonseDTO.swift */; };
+		784DDEC12C00ADE90061B432 /* ResumeDataPostRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784DDEC02C00ADE90061B432 /* ResumeDataPostRequestDTO.swift */; };
+		784DDEC32C00AE600061B432 /* ResumeDataPostResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784DDEC22C00AE600061B432 /* ResumeDataPostResponseDTO.swift */; };
 		7852BD172BEB41D20037BA7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7852BD162BEB41D20037BA7E /* AppDelegate.swift */; };
 		7852BD192BEB41D20037BA7E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7852BD182BEB41D20037BA7E /* SceneDelegate.swift */; };
 		7852BD232BEB41D30037BA7E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7852BD212BEB41D30037BA7E /* LaunchScreen.storyboard */; };
@@ -112,6 +114,8 @@
 		784DDEA82C0051D60061B432 /* BottomRegisterVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomRegisterVC.swift; sourceTree = "<group>"; };
 		784DDEB72C0052970061B432 /* PrivacyInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PrivacyInfo.plist; sourceTree = "<group>"; };
 		784DDEB92C0053250061B432 /* CompanyDetailResonseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyDetailResonseDTO.swift; sourceTree = "<group>"; };
+		784DDEC02C00ADE90061B432 /* ResumeDataPostRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeDataPostRequestDTO.swift; sourceTree = "<group>"; };
+		784DDEC22C00AE600061B432 /* ResumeDataPostResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeDataPostResponseDTO.swift; sourceTree = "<group>"; };
 		7852BD132BEB41D20037BA7E /* Jumpit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jumpit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7852BD162BEB41D20037BA7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7852BD182BEB41D20037BA7E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -120,16 +124,6 @@
 		DD8B97C22C002C37001D9DBA /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		DD8B97C42C00327E001D9DBA /* ResumeEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeEditViewController.swift; sourceTree = "<group>"; };
 		DD8B97C82C00349E001D9DBA /* ResumeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeCollectionViewCell.swift; sourceTree = "<group>"; };
-		DD9EB1E22C0061D400F8B7C1 /* BottomRegisterVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomRegisterVC.swift; sourceTree = "<group>"; };
-		DD9EB1E32C0061D400F8B7C1 /* DetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
-		DD9EB1E52C0061D400F8B7C1 /* CompanyInfoCVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompanyInfoCVC.swift; sourceTree = "<group>"; };
-		DD9EB1E62C0061D400F8B7C1 /* differenceCVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = differenceCVC.swift; sourceTree = "<group>"; };
-		DD9EB1E72C0061D400F8B7C1 /* ExpandableCVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandableCVC.swift; sourceTree = "<group>"; };
-		DD9EB1E82C0061D400F8B7C1 /* JDCVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDCVC.swift; sourceTree = "<group>"; };
-		DD9EB1E92C0061D400F8B7C1 /* PositionBodyCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PositionBodyCollectionViewCell.swift; sourceTree = "<group>"; };
-		DD9EB1EA2C0061D400F8B7C1 /* PositionHeaderCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PositionHeaderCollectionViewCell.swift; sourceTree = "<group>"; };
-		DD9EB1EB2C0061D400F8B7C1 /* rewardCVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = rewardCVC.swift; sourceTree = "<group>"; };
-		DD9EB1ED2C0061D400F8B7C1 /* DetailModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailModel.swift; sourceTree = "<group>"; };
 		DD9EB1FC2C0093D100F8B7C1 /* PrivateResumeResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateResumeResponseDTO.swift; sourceTree = "<group>"; };
 		DD9EB1FF2C00958D00F8B7C1 /* PrivateResumeRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateResumeRequestDTO.swift; sourceTree = "<group>"; };
 		DDB170172BFFCB6B00CD9E9C /* ApplyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplyViewController.swift; sourceTree = "<group>"; };
@@ -243,6 +237,7 @@
 				784DDEB92C0053250061B432 /* CompanyDetailResonseDTO.swift */,
 				DDCEC2E82C005C4A00E90FB7 /* RetriveResumeResponseDTO.swift */,
 				DD9EB1FC2C0093D100F8B7C1 /* PrivateResumeResponseDTO.swift */,
+				784DDEC22C00AE600061B432 /* ResumeDataPostResponseDTO.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -366,6 +361,7 @@
 			isa = PBXGroup;
 			children = (
 				DD9EB1FF2C00958D00F8B7C1 /* PrivateResumeRequestDTO.swift */,
+				784DDEC02C00ADE90061B432 /* ResumeDataPostRequestDTO.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -699,6 +695,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DDB170362BFFCB6B00CD9E9C /* ApplyViewController.swift in Sources */,
+				784DDEC32C00AE600061B432 /* ResumeDataPostResponseDTO.swift in Sources */,
 				DDCEC2E92C005C4A00E90FB7 /* RetriveResumeResponseDTO.swift in Sources */,
 				DDB170482BFFCB6B00CD9E9C /* SearchResultCollectionView.swift in Sources */,
 				DDB170452BFFCB6B00CD9E9C /* RecentSearchView.swift in Sources */,
@@ -750,6 +747,7 @@
 				DDB1704F2BFFCB6B00CD9E9C /* SortCategoryCollectionViewCell.swift in Sources */,
 				DDB1703E2BFFCB6B00CD9E9C /* JobOptionCollectionViewCell.swift in Sources */,
 				DDB170382BFFCB6B00CD9E9C /* CustomNavigationBarView.swift in Sources */,
+				784DDEC12C00ADE90061B432 /* ResumeDataPostRequestDTO.swift in Sources */,
 				7852BD192BEB41D20037BA7E /* SceneDelegate.swift in Sources */,
 				DD8B97C12C0029B4001D9DBA /* ResumeAddViewController.swift in Sources */,
 				DD8B97C52C00327E001D9DBA /* ResumeEditViewController.swift in Sources */,
