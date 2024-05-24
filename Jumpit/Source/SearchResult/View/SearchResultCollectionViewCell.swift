@@ -50,6 +50,7 @@ final class  SearchResultCollectionViewCell: UICollectionViewCell {
     }
     
     private var isBookmarked: Bool = false
+    var positionId: Int?
     
     // MARK: - init
     override init(frame: CGRect) {
@@ -108,13 +109,12 @@ final class  SearchResultCollectionViewCell: UICollectionViewCell {
 
 extension SearchResultCollectionViewCell {
     func dataBind(_ searchResult: SearchResultModel) {
+        self.positionId = searchResult.positionId
         enterpriseNameLabel.text = searchResult.enterpriseName
         recruitmentNoticeLabel.text = searchResult.recruitmentNotice
         technologyStackLabel.text = searchResult.technologyStack.joined(separator: " · ")
         
-        let convertedLink = convertGoogleDriveLink(searchResult.enterpriseImage)
-        
-        if let url = URL(string: convertedLink) {
+        if let url = URL(string: searchResult.enterpriseImage) {
             enterpriseImageView.kf.setImage(
                 with: url,
                 placeholder: UIImage(named: "placeholderImage"),
@@ -133,16 +133,6 @@ extension SearchResultCollectionViewCell {
         } else {
             print("Invalid URL string: \(searchResult.enterpriseImage)")
         }
-    }
-    
-    // Google Drive 공유 링크를 직접 접근 링크로 변환하는 함수
-    private func convertGoogleDriveLink(_ link: String) -> String {
-        if link.contains("drive.google.com") {
-            if let fileId = link.split(separator: "/").dropLast().last {
-                return "https://drive.google.com/uc?export=view&id=\(fileId)"
-            }
-        }
-        return link
     }
 }
 

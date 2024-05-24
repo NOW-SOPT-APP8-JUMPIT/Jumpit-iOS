@@ -107,6 +107,7 @@ final class SearchResultViewController: UIViewController {
     private func convertPositionsToSearchResults(_ positions: [Position]) -> [SearchResultModel] {
         return positions.map { position in
             SearchResultModel(
+                positionId: position.id,
                 enterpriseImage: position.company.image,
                 enterpriseName: position.company.name,
                 recruitmentNotice: position.title,
@@ -186,8 +187,13 @@ extension SearchResultViewController: SearchResultCollectionViewDelegate {
         present(sortCategoryVC, animated: true)
     }
     
-    func didSelectSearchResultCell() {
+    func didSelectSearchResultCell(at indexPath: IndexPath) {
+        guard let cell = searchResultCollectionView.getCell(at: indexPath), let selectedId = cell.positionId else {
+            print("id 반환 실패")
+            return
+        }
         let VC = DetailVC()
+        VC.positionId = String(selectedId)
         navigationController?.pushViewController(VC, animated: true)
     }
 }

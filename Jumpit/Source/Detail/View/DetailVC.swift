@@ -16,6 +16,7 @@ class DetailVC: UIViewController {
     private var dataSource: UICollectionViewDiffableDataSource<Section, AnyHashable>!
     private var bottomRegisterViewController = BottomRegisterViewController()
     private let networkProvider = NetworkProvider<PositionsAPI>()
+    var positionId: String?
 
     override func viewWillAppear(_ animated: Bool) {
             super.viewWillAppear(animated)
@@ -319,8 +320,7 @@ class DetailVC: UIViewController {
   
     
     private func fetchPositionDetail() {
-        let positionId = "1" // 전달받은 positionId를 사용
-        networkProvider.request(api: .fetchPositionDetail(positionId: positionId)) { [weak self] result in
+        networkProvider.request(api: .fetchPositionDetail(positionId: positionId ?? "")) { [weak self] result in
             switch result {
             case .success(let response):
                 do {
