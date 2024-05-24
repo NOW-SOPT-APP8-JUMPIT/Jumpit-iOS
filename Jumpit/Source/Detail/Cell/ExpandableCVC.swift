@@ -94,72 +94,74 @@ class ExpandableJobCell: UICollectionViewCell {
     }
     
     // MARK: - Update Content
-    private func updateContent() {
-        guard let detail = detail else { return }
-        titleLabel.text = detail.titles.joined(separator: ", ")
-        jobDetailLabel.text = detail.jobDetail
-        
-        stackContainerView.subviews.forEach { $0.removeFromSuperview() }
-        
-        if let skills = detail.skills {
-            stackContainerView.isHidden = false
-            
-            var lastSkillView: UIView? = nil
-            for skill in skills {
-                let skillView = UIView().then {
-                    $0.backgroundColor = .jumpitGray1
-                    $0.layer.cornerRadius = 5
-                }
-                
-                let imageView = UIImageView().then {
-                    $0.contentMode = .scaleAspectFill
-                    $0.clipsToBounds = true
-                }
-                if let url = URL(string: skill.image ?? ""), let data = try? Data(contentsOf: url) {
-                    imageView.image = UIImage(data: data)
-                }
-                
-                let skillLabel = UILabel().then {
-                    $0.font = UIFont(name: "Pretendard-Regular", size: 12)
-                    $0.text = skill.name
-                }
-                
-                skillView.addSubview(imageView)
-                skillView.addSubview(skillLabel)
-                
-                imageView.snp.makeConstraints {
-                    $0.leading.equalToSuperview().offset(10)
-                    $0.centerY.equalToSuperview()
-                    $0.size.equalTo(20)
-                }
-                
-                skillLabel.snp.makeConstraints {
-                    $0.leading.equalTo(imageView.snp.trailing).offset(10)
-                    $0.centerY.equalToSuperview()
-                    $0.trailing.equalToSuperview().offset(-10)
-                }
-                
-                skillView.snp.makeConstraints {
-                    $0.height.equalTo(31)
-                    $0.width.greaterThanOrEqualTo(0)
-                }
-                
-                stackContainerView.addSubview(skillView)
-                skillView.snp.makeConstraints { make in
-                    make.top.equalToSuperview().offset(10)
-                    if let lastSkillView = lastSkillView {
-                        make.leading.equalTo(lastSkillView.snp.trailing).offset(10)
-                    } else {
-                        make.leading.equalToSuperview().offset(10)
-                    }
-                    make.bottom.equalToSuperview().offset(-10)
-                }
-                
-                lastSkillView = skillView
-            }
-        }
-    }
+    // MARK: - Update Content
+       private func updateContent() {
+           guard let detail = detail else { return }
+           titleLabel.text = detail.titles.joined(separator: ", ")
+           jobDetailLabel.text = detail.jobDetail
+           
+           stackContainerView.subviews.forEach { $0.removeFromSuperview() }
+           
+           if let skills = detail.skills {
+               stackContainerView.isHidden = false
+               
+               var lastSkillView: UIView? = nil
+               for skill in skills {
+                   let skillView = UIView().then {
+                       $0.backgroundColor = .jumpitGray1
+                       $0.layer.cornerRadius = 5
+                   }
+                   
+                   let imageView = UIImageView().then {
+                       $0.contentMode = .scaleAspectFill
+                       $0.clipsToBounds = true
+                   }
+                   loadImage(from: skill.image) { image in
+                       imageView.image = image
+                   }
+                   
+                   let skillLabel = UILabel().then {
+                       $0.font = UIFont(name: "Pretendard-Regular", size: 12)
+                       $0.text = skill.name
+                   }
+                   
+                   skillView.addSubview(imageView)
+                   skillView.addSubview(skillLabel)
+                   
+                   imageView.snp.makeConstraints {
+                       $0.leading.equalToSuperview().offset(10)
+                       $0.centerY.equalToSuperview()
+                       $0.size.equalTo(20)
+                   }
+                   
+                   skillLabel.snp.makeConstraints {
+                       $0.leading.equalTo(imageView.snp.trailing).offset(10)
+                       $0.centerY.equalToSuperview()
+                       $0.trailing.equalToSuperview().offset(-10)
+                   }
+                   
+                   skillView.snp.makeConstraints {
+                       $0.height.equalTo(31)
+                       $0.width.greaterThanOrEqualTo(0)
+                   }
+                   
+                   stackContainerView.addSubview(skillView)
+                   skillView.snp.makeConstraints { make in
+                       make.top.equalToSuperview().offset(10)
+                       if let lastSkillView = lastSkillView {
+                           make.leading.equalTo(lastSkillView.snp.trailing).offset(10)
+                       } else {
+                           make.leading.equalToSuperview().offset(10)
+                       }
+                       make.bottom.equalToSuperview().offset(-10)
+                   }
+                   
+                   lastSkillView = skillView
+               }
+           }
+       }
     
+  
     // MARK: - Update Appearance
     private func updateAppearance() {
         jobDetailLabel.isHidden = !isExpanded
@@ -191,6 +193,25 @@ class ExpandableJobCell: UICollectionViewCell {
         
         UIView.animate(withDuration: 0.3) {
             self.layoutIfNeeded()
+        }
+    }
+
+    private func loadImage(from urlString: String?, completion: @escaping (UIImage?) -> Void) {
+        guard let urlString = urlString, let url = URL(string: urlString) else {
+            completion(nil)
+            return
+        }
+        
+        DispatchQueue.global().async {
+            if let data = try? Data(contentsOf: url), let image = UIImage(data: data) {
+                DispatchQueue.main.async {
+                    completion(image)
+                }
+            } else {
+                DispatchQueue.main.async {
+                    completion(nil)
+                }
+            }
         }
     }
 }

@@ -316,6 +316,7 @@ class DetailVC: UIViewController {
         return section
     }
     
+  
     
     private func fetchPositionDetail() {
         let positionId = "1" // 전달받은 positionId를 사용
@@ -333,62 +334,65 @@ class DetailVC: UIViewController {
                     // Mapping Position and Company to JobDetail
                     let position = data.position
                     let company = data.company
-                    let jobDetail = JobDetail(
-                        image: self?.loadImage(from: company?.image),
-                        title: position?.title ?? "",
-                        description: company?.description ?? "",
-                        careerLabel: "경력",
-                        educationLabel: "학력",
-                        deadlineLabel: "마감일",
-                        locationLabel: "근무지",
-                        career: position?.career ?? "",
-                        education: position?.education ?? "",
-                        deadline: position?.deadline ?? "",
-                        location: position?.location ?? ""
-                    )
                     
-                    // Mapping Skills to ExpandableJobDetail
-                    let jobSkills: [JobSkill] = data.skills?.map { JobSkill(name: $0.name, image: $0.image) } ?? []
-                    let expandableJobDetails: [ExpandableJobDetail] = [
-                        ExpandableJobDetail(
-                            isExpanded: false,
-                            titles: ["기술스택"],
-                            jobDetail: "",
-                            skills: jobSkills
-                        ),
-                        ExpandableJobDetail(
-                            isExpanded: false,
-                            titles: ["주요업무"],
-                            jobDetail: position?.responsibilities ?? "",
-                            skills: nil
-                        ),
-                        ExpandableJobDetail(
-                            isExpanded: false,
-                            titles: ["자격요건"],
-                            jobDetail: position?.qualifications ?? "",
-                            skills: nil
-                        ),
-                        ExpandableJobDetail(
-                            isExpanded: false,
-                            titles: ["우대사항"],
-                            jobDetail: position?.preferred ?? "",
-                            skills: nil
-                        ),
-                        ExpandableJobDetail(
-                            isExpanded: false,
-                            titles: ["혜택 및 복지"],
-                            jobDetail: position?.benefits ?? "",
-                            skills: nil
-                        ),
-                        ExpandableJobDetail(
-                            isExpanded: false,
-                            titles: ["채용절차 및 기타"],
-                            jobDetail: position?.notice ?? "",
-                            skills: nil
+                    self?.loadImage(from: company?.image) { image in
+                        let jobDetail = JobDetail(
+                            image: image,
+                            title: position?.title ?? "",
+                            description: company?.description ?? "",
+                            careerLabel: "경력",
+                            educationLabel: "학력",
+                            deadlineLabel: "마감일",
+                            locationLabel: "근무지",
+                            career: position?.career ?? "",
+                            education: position?.education ?? "",
+                            deadline: position?.deadline ?? "",
+                            location: position?.location ?? ""
                         )
-                    ]
-                    
-                    self?.updateUISnapshot(with: jobDetail, expandableJobDetails: expandableJobDetails)
+                        
+                        // Mapping Skills to ExpandableJobDetail
+                        let jobSkills: [JobSkill] = data.skills?.map { JobSkill(name: $0.name, image: $0.image) } ?? []
+                        let expandableJobDetails: [ExpandableJobDetail] = [
+                            ExpandableJobDetail(
+                                isExpanded: false,
+                                titles: ["기술스택"],
+                                jobDetail: "",
+                                skills: jobSkills
+                            ),
+                            ExpandableJobDetail(
+                                isExpanded: false,
+                                titles: ["주요업무"],
+                                jobDetail: position?.responsibilities ?? "",
+                                skills: nil
+                            ),
+                            ExpandableJobDetail(
+                                isExpanded: false,
+                                titles: ["자격요건"],
+                                jobDetail: position?.qualifications ?? "",
+                                skills: nil
+                            ),
+                            ExpandableJobDetail(
+                                isExpanded: false,
+                                titles: ["우대사항"],
+                                jobDetail: position?.preferred ?? "",
+                                skills: nil
+                            ),
+                            ExpandableJobDetail(
+                                isExpanded: false,
+                                titles: ["혜택 및 복지"],
+                                jobDetail: position?.benefits ?? "",
+                                skills: nil
+                            ),
+                            ExpandableJobDetail(
+                                isExpanded: false,
+                                titles: ["채용절차 및 기타"],
+                                jobDetail: position?.notice ?? "",
+                                skills: nil
+                            )
+                        ]
+                        
+                        self?.updateUISnapshot(with: jobDetail, expandableJobDetails: expandableJobDetails)
+                    }
                 } catch {
                     print("Decoding error: \(error)")
                 }
@@ -396,6 +400,7 @@ class DetailVC: UIViewController {
                 print("Network error: \(error)")
             }
         }
+
     }
 
     // PlaceHolder -> 진짜 데이터로 교체
@@ -421,15 +426,25 @@ class DetailVC: UIViewController {
 
 
 
-    private func loadImage(from urlString: String?) -> UIImage? {
+    private func loadImage(from urlString: String?, completion: @escaping (UIImage?) -> Void) {
         guard let urlString = urlString, let url = URL(string: urlString) else {
-            return nil
+            completion(nil)
+            return
         }
-        if let data = try? Data(contentsOf: url) {
-            return UIImage(data: data)
+        
+        DispatchQueue.global().async {
+            if let data = try? Data(contentsOf: url), let image = UIImage(data: data) {
+                DispatchQueue.main.async {
+                    completion(image)
+                }
+            } else {
+                DispatchQueue.main.async {
+                    completion(nil)
+                }
+            }
         }
-        return nil
     }
+
   
 }
 
