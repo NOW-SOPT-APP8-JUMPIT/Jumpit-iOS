@@ -31,6 +31,15 @@ final class RecentSearchViewController: UIViewController {
         recentSearchView.updateRecentSearches()
     }
     
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        // 네비게이션 바를 다시 표시
+        navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
+    
+    
     // MARK: - SetLayout
     private func setLayout() {
         [customNavigationBarView, recentSearchView].forEach {
