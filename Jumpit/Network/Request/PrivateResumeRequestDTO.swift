@@ -12,8 +12,3 @@ struct PrivateResumeRequest: Codable {
     let isPrivate: Bool
 }
 
-struct ResumeDataPostRequest: Codable {
-    let title: String
-    let userId: Int
-}
-
