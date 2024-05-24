@@ -253,6 +253,7 @@ class ResumeViewController: UIViewController {
                 case .success(let resumes):
                     self.resumeData = resumes
                     self.resumeCollectionView.reloadData()
+                    self.resumeNumberLabel.text = String(resumes.count)
                 case .failure(let error):
                     HandleNetworkError.handleNetworkError(error)
                 }
