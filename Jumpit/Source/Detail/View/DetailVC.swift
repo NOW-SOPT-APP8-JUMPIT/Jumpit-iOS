@@ -54,13 +54,12 @@ class DetailVC: UIViewController {
         collectionView.register(ExpandableJobCell.self, forCellWithReuseIdentifier: "ExpandableJobCell")
         collectionView.register(DifferenceResumeCollectionViewCell.self, forCellWithReuseIdentifier: "DifferenceResumeCollectionViewCell")
         collectionView.register(CompanyInfoCollectionViewCell.self, forCellWithReuseIdentifier: "CompanyInfoCollectionViewCell")
+        collectionView.register(PlaceholderCell.self, forCellWithReuseIdentifier: "PlaceholderCell")
         
         collectionView.register(PositionHeaderCollectionViewCell.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "PositionHeaderCollectionViewCell")
         
         collectionView.register(PositionBodyCollectionViewCell.self, forCellWithReuseIdentifier: "PositionBodyCollectionViewCell")
-        
         collectionView.register(rewardCVC.self, forCellWithReuseIdentifier: "rewardCVC")
-        
         
         view.addSubview(collectionView)
         collectionView.snp.makeConstraints {
@@ -69,6 +68,7 @@ class DetailVC: UIViewController {
         collectionView.dataSource = self
         collectionView.delegate = self
     }
+
     
     private func addBottomRegisterView() {
         addChild(bottomRegisterViewController)
@@ -90,12 +90,20 @@ class DetailVC: UIViewController {
             
             switch sectionType {
             case .jobDetail:
+                if (item as? String)?.starts(with: "Placeholder_jobDetail_") == true {
+                    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PlaceholderCell", for: indexPath) as! PlaceholderCell
+                    return cell
+                }
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "JDCVC", for: indexPath) as! JDCVC
                 if let jobDetail = item as? JobDetail {
                     cell.configure(with: jobDetail)
                 }
                 return cell
             case .expandable:
+                if (item as? String)?.starts(with: "Placeholder_expandable_") == true {
+                    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PlaceholderCell", for: indexPath) as! PlaceholderCell
+                    return cell
+                }
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ExpandableJobCell", for: indexPath) as! ExpandableJobCell
                 if let expandableDetail = item as? ExpandableJobDetail {
                     cell.detail = expandableDetail
@@ -103,26 +111,40 @@ class DetailVC: UIViewController {
                 }
                 return cell
             case .differentJobDetail:
+                if (item as? String)?.starts(with: "Placeholder_differentJobDetail_") == true {
+                    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PlaceholderCell", for: indexPath) as! PlaceholderCell
+                    return cell
+                }
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DifferenceResumeCollectionViewCell", for: indexPath) as! DifferenceResumeCollectionViewCell
                 if let differentDetail = item as? DifferentJobDetail {
                     cell.configure(with: differentDetail.title)
                 }
                 return cell
             case .companyInfo:
+                if (item as? String)?.starts(with: "Placeholder_companyInfo_") == true {
+                    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PlaceholderCell", for: indexPath) as! PlaceholderCell
+                    return cell
+                }
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CompanyInfoCollectionViewCell", for: indexPath) as! CompanyInfoCollectionViewCell
                 if let companyInfo = item as? CompanyInfo {
                     cell.configure(with: companyInfo)
                 }
                 return cell
-                
             case .positionDetail:
+                if (item as? String)?.starts(with: "Placeholder_positionDetail_") == true {
+                    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PlaceholderCell", for: indexPath) as! PlaceholderCell
+                    return cell
+                }
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PositionBodyCollectionViewCell", for: indexPath) as! PositionBodyCollectionViewCell
                 if let detail = item as? PositionDetail {
                     cell.configure(with: detail)
                 }
                 return cell
-                
             case .rewardDetail:
+                if (item as? String)?.starts(with: "Placeholder_rewardDetail_") == true {
+                    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PlaceholderCell", for: indexPath) as! PlaceholderCell
+                    return cell
+                }
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "rewardCVC", for: indexPath) as! rewardCVC
                 if let rewardDetail = item as? RewardDetail {
                     cell.configure(with: rewardDetail.image)
@@ -130,7 +152,7 @@ class DetailVC: UIViewController {
                 return cell
             }
         }
-        //헤더지정
+        
         dataSource.supplementaryViewProvider = { [weak self] (collectionView, kind, indexPath) -> UICollectionReusableView? in
             guard let sectionType = Section(rawValue: indexPath.section) else { return nil }
             if kind == UICollectionView.elementKindSectionHeader {
@@ -143,8 +165,9 @@ class DetailVC: UIViewController {
             }
             return nil
         }
-        
     }
+
+
     
     func createLayout() -> UICollectionViewLayout {
         return UICollectionViewCompositionalLayout { sectionIndex, layoutEnvironment -> NSCollectionLayoutSection? in
@@ -166,18 +189,32 @@ class DetailVC: UIViewController {
         }
     }
     
-    //확장셀을 위한 스냅샷
     private func applyInitialSnapshots() {
         var snapshot = NSDiffableDataSourceSnapshot<Section, AnyHashable>()
         snapshot.appendSections([.jobDetail, .expandable, .differentJobDetail, .companyInfo, .positionDetail, .rewardDetail])
+        
         snapshot.appendItems(MockData.differentJobDetails, toSection: .differentJobDetail)
         snapshot.appendItems(MockData.companyInfo, toSection: .companyInfo)
         snapshot.appendItems(MockData.positionDetails, toSection: .positionDetail)
         snapshot.appendItems(MockData.rewardDetails, toSection: .rewardDetail)
+
+        let jobDetailPlaceholders = Array(0..<5).map { "Placeholder_jobDetail_\($0)" }
+        let expandablePlaceholders = Array(0..<5).map { "Placeholder_expandable_\($0)" }
+        let differentJobDetailPlaceholders = Array(0..<5).map { "Placeholder_differentJobDetail_\($0)" }
+        let companyInfoPlaceholders = Array(0..<5).map { "Placeholder_companyInfo_\($0)" }
+        let positionDetailPlaceholders = Array(0..<5).map { "Placeholder_positionDetail_\($0)" }
+        let rewardDetailPlaceholders = Array(0..<5).map { "Placeholder_rewardDetail_\($0)" }
+
+        snapshot.appendItems(jobDetailPlaceholders, toSection: .jobDetail)
+        snapshot.appendItems(expandablePlaceholders, toSection: .expandable)
+        snapshot.appendItems(differentJobDetailPlaceholders, toSection: .differentJobDetail)
+        snapshot.appendItems(companyInfoPlaceholders, toSection: .companyInfo)
+        snapshot.appendItems(positionDetailPlaceholders, toSection: .positionDetail)
+        snapshot.appendItems(rewardDetailPlaceholders, toSection: .rewardDetail)
+        
         dataSource.apply(snapshot, animatingDifferences: false)
     }
-    
-    
+
     //스냅샷 업데이트
     func updateSnapshot(for cell: ExpandableJobCell, at indexPath: IndexPath) {
         var snapshot = dataSource.snapshot()
@@ -280,6 +317,7 @@ class DetailVC: UIViewController {
         return section
     }
     
+  
     
     private func fetchPositionDetail() {
         networkProvider.request(api: .fetchPositionDetail(positionId: positionId ?? "")) { [weak self] result in
@@ -296,62 +334,65 @@ class DetailVC: UIViewController {
                     // Mapping Position and Company to JobDetail
                     let position = data.position
                     let company = data.company
-                    let jobDetail = JobDetail(
-                        image: self?.loadImage(from: company?.image),
-                        title: position?.title ?? "",
-                        description: company?.description ?? "",
-                        careerLabel: "경력",
-                        educationLabel: "학력",
-                        deadlineLabel: "마감일",
-                        locationLabel: "근무지",
-                        career: position?.career ?? "",
-                        education: position?.education ?? "",
-                        deadline: position?.deadline ?? "",
-                        location: position?.location ?? ""
-                    )
                     
-                    // Mapping Skills to ExpandableJobDetail
-                    let jobSkills: [JobSkill] = data.skills?.map { JobSkill(name: $0.name, image: $0.image) } ?? []
-                    let expandableJobDetails: [ExpandableJobDetail] = [
-                        ExpandableJobDetail(
-                            isExpanded: false,
-                            titles: ["기술스택"],
-                            jobDetail: "",
-                            skills: jobSkills
-                        ),
-                        ExpandableJobDetail(
-                            isExpanded: false,
-                            titles: ["주요업무"],
-                            jobDetail: position?.responsibilities ?? "",
-                            skills: nil
-                        ),
-                        ExpandableJobDetail(
-                            isExpanded: false,
-                            titles: ["자격요건"],
-                            jobDetail: position?.qualifications ?? "",
-                            skills: nil
-                        ),
-                        ExpandableJobDetail(
-                            isExpanded: false,
-                            titles: ["우대사항"],
-                            jobDetail: position?.preferred ?? "",
-                            skills: nil
-                        ),
-                        ExpandableJobDetail(
-                            isExpanded: false,
-                            titles: ["혜택 및 복지"],
-                            jobDetail: position?.benefits ?? "",
-                            skills: nil
-                        ),
-                        ExpandableJobDetail(
-                            isExpanded: false,
-                            titles: ["채용절차 및 기타"],
-                            jobDetail: position?.notice ?? "",
-                            skills: nil
+                    self?.loadImage(from: company?.image) { image in
+                        let jobDetail = JobDetail(
+                            image: image,
+                            title: position?.title ?? "",
+                            description: company?.description ?? "",
+                            careerLabel: "경력",
+                            educationLabel: "학력",
+                            deadlineLabel: "마감일",
+                            locationLabel: "근무지",
+                            career: position?.career ?? "",
+                            education: position?.education ?? "",
+                            deadline: position?.deadline ?? "",
+                            location: position?.location ?? ""
                         )
-                    ]
-                    
-                    self?.updateUISnapshot(with: jobDetail, expandableJobDetails: expandableJobDetails)
+                        
+                        // Mapping Skills to ExpandableJobDetail
+                        let jobSkills: [JobSkill] = data.skills?.map { JobSkill(name: $0.name, image: $0.image) } ?? []
+                        let expandableJobDetails: [ExpandableJobDetail] = [
+                            ExpandableJobDetail(
+                                isExpanded: false,
+                                titles: ["기술스택"],
+                                jobDetail: "",
+                                skills: jobSkills
+                            ),
+                            ExpandableJobDetail(
+                                isExpanded: false,
+                                titles: ["주요업무"],
+                                jobDetail: position?.responsibilities ?? "",
+                                skills: nil
+                            ),
+                            ExpandableJobDetail(
+                                isExpanded: false,
+                                titles: ["자격요건"],
+                                jobDetail: position?.qualifications ?? "",
+                                skills: nil
+                            ),
+                            ExpandableJobDetail(
+                                isExpanded: false,
+                                titles: ["우대사항"],
+                                jobDetail: position?.preferred ?? "",
+                                skills: nil
+                            ),
+                            ExpandableJobDetail(
+                                isExpanded: false,
+                                titles: ["혜택 및 복지"],
+                                jobDetail: position?.benefits ?? "",
+                                skills: nil
+                            ),
+                            ExpandableJobDetail(
+                                isExpanded: false,
+                                titles: ["채용절차 및 기타"],
+                                jobDetail: position?.notice ?? "",
+                                skills: nil
+                            )
+                        ]
+                        
+                        self?.updateUISnapshot(with: jobDetail, expandableJobDetails: expandableJobDetails)
+                    }
                 } catch {
                     print("Decoding error: \(error)")
                 }
@@ -359,26 +400,51 @@ class DetailVC: UIViewController {
                 print("Network error: \(error)")
             }
         }
+
     }
 
+    // PlaceHolder -> 진짜 데이터로 교체
     private func updateUISnapshot(with jobDetail: JobDetail, expandableJobDetails: [ExpandableJobDetail]) {
         var snapshot = dataSource.snapshot()
+        
+        snapshot.deleteItems(snapshot.itemIdentifiers(inSection: .jobDetail))
+        snapshot.deleteItems(snapshot.itemIdentifiers(inSection: .expandable))
+        snapshot.deleteItems(snapshot.itemIdentifiers(inSection: .companyInfo))
+        snapshot.deleteItems(snapshot.itemIdentifiers(inSection: .differentJobDetail))
+        snapshot.deleteItems(snapshot.itemIdentifiers(inSection: .rewardDetail))
+        snapshot.deleteItems(snapshot.itemIdentifiers(inSection: .positionDetail))
+        
         snapshot.appendItems([jobDetail], toSection: .jobDetail)
         snapshot.appendItems(expandableJobDetails, toSection: .expandable)
+        snapshot.appendItems(MockData.companyInfo, toSection: .companyInfo)
+        snapshot.appendItems(MockData.differentJobDetails, toSection: .differentJobDetail)
+        snapshot.appendItems(MockData.rewardDetails, toSection: .rewardDetail)
+        snapshot.appendItems(MockData.positionDetails, toSection: .positionDetail)
+        
         dataSource.apply(snapshot, animatingDifferences: true)
     }
 
-    
-    //서버에서 이미지 수정하면 그떄 수정
-    private func loadImage(from urlString: String?) -> UIImage? {
+
+
+    private func loadImage(from urlString: String?, completion: @escaping (UIImage?) -> Void) {
         guard let urlString = urlString, let url = URL(string: urlString) else {
-            return nil
+            completion(nil)
+            return
         }
-        if let data = try? Data(contentsOf: url) {
-            return UIImage(data: data)
+        
+        DispatchQueue.global().async {
+            if let data = try? Data(contentsOf: url), let image = UIImage(data: data) {
+                DispatchQueue.main.async {
+                    completion(image)
+                }
+            } else {
+                DispatchQueue.main.async {
+                    completion(nil)
+                }
+            }
         }
-        return nil
     }
+
   
 }
 
@@ -422,10 +488,6 @@ extension DetailVC: UICollectionViewDelegate {
         }
         item.isExpanded.toggle()
 
-        // 로그 추가
-        print("Item selected at indexPath: \(indexPath), isExpanded: \(item.isExpanded)")
-
-        // 스냅샷 업데이트
         var snapshot = dataSource.snapshot()
 
         // 항목 업데이트
