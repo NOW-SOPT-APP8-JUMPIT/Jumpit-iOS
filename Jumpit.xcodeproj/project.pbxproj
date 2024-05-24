@@ -36,6 +36,8 @@
 		DD9EB1F62C0061D400F8B7C1 /* PositionHeaderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9EB1EA2C0061D400F8B7C1 /* PositionHeaderCollectionViewCell.swift */; };
 		DD9EB1F72C0061D400F8B7C1 /* rewardCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9EB1EB2C0061D400F8B7C1 /* rewardCVC.swift */; };
 		DD9EB1F82C0061D400F8B7C1 /* DetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9EB1ED2C0061D400F8B7C1 /* DetailModel.swift */; };
+		DD9EB1FD2C0093D100F8B7C1 /* PrivateResumeResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9EB1FC2C0093D100F8B7C1 /* PrivateResumeResponseDTO.swift */; };
+		DD9EB2002C00958D00F8B7C1 /* PrivateResumeRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9EB1FF2C00958D00F8B7C1 /* PrivateResumeRequestDTO.swift */; };
 		DDB170362BFFCB6B00CD9E9C /* ApplyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB170172BFFCB6B00CD9E9C /* ApplyViewController.swift */; };
 		DDB170372BFFCB6B00CD9E9C /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB170182BFFCB6B00CD9E9C /* CategoryModel.swift */; };
 		DDB170382BFFCB6B00CD9E9C /* CustomNavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB170192BFFCB6B00CD9E9C /* CustomNavigationBarView.swift */; };
@@ -115,6 +117,8 @@
 		DD9EB1EA2C0061D400F8B7C1 /* PositionHeaderCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PositionHeaderCollectionViewCell.swift; sourceTree = "<group>"; };
 		DD9EB1EB2C0061D400F8B7C1 /* rewardCVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = rewardCVC.swift; sourceTree = "<group>"; };
 		DD9EB1ED2C0061D400F8B7C1 /* DetailModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailModel.swift; sourceTree = "<group>"; };
+		DD9EB1FC2C0093D100F8B7C1 /* PrivateResumeResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateResumeResponseDTO.swift; sourceTree = "<group>"; };
+		DD9EB1FF2C00958D00F8B7C1 /* PrivateResumeRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateResumeRequestDTO.swift; sourceTree = "<group>"; };
 		DDB170172BFFCB6B00CD9E9C /* ApplyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplyViewController.swift; sourceTree = "<group>"; };
 		DDB170182BFFCB6B00CD9E9C /* CategoryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
 		DDB170192BFFCB6B00CD9E9C /* CustomNavigationBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationBarView.swift; sourceTree = "<group>"; };
@@ -181,6 +185,7 @@
 				2D80A8BB2BFFD6610058393F /* API */,
 				2D80A8BC2BFFD66C0058393F /* Foundation */,
 				2D80A8BD2BFFD6730058393F /* Manager */,
+				DD9EB1FE2C00957100F8B7C1 /* Request */,
 				2D80A8BE2BFFD67A0058393F /* Response */,
 			);
 			path = Network;
@@ -222,6 +227,7 @@
 				2D80A8C12BFFD6DC0058393F /* ResumesResponseDTO.swift */,
 				2D80A8C32BFFD71A0058393F /* SearchResultResponseDTO.swift */,
 				DDCEC2E82C005C4A00E90FB7 /* RetriveResumeResponseDTO.swift */,
+				DD9EB1FC2C0093D100F8B7C1 /* PrivateResumeResponseDTO.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -328,6 +334,14 @@
 				DDB1701D2BFFCB6B00CD9E9C /* HomeViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		DD9EB1FE2C00957100F8B7C1 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				DD9EB1FF2C00958D00F8B7C1 /* PrivateResumeRequestDTO.swift */,
+			);
+			path = Request;
 			sourceTree = "<group>";
 		};
 		DDB170352BFFCB6B00CD9E9C /* Source */ = {
@@ -689,6 +703,7 @@
 				DD9EB1F52C0061D400F8B7C1 /* PositionBodyCollectionViewCell.swift in Sources */,
 				DDB1706F2BFFCBAB00CD9E9C /* UIFont+.swift in Sources */,
 				DDB170512BFFCB6B00CD9E9C /* SortCategoryViewController.swift in Sources */,
+				DD9EB1FD2C0093D100F8B7C1 /* PrivateResumeResponseDTO.swift in Sources */,
 				DDB170432BFFCB6B00CD9E9C /* RecentSearchModel.swift in Sources */,
 				2D80A8C62BFFD7690058393F /* SearchManager.swift in Sources */,
 				DDCEC2EB2C005D9D00E90FB7 /* ResumeManager.swift in Sources */,
@@ -707,6 +722,7 @@
 				2D80A8CA2BFFD7D90058393F /* NetworkError.swift in Sources */,
 				2D80A8D02BFFD9300058393F /* ResumesAPI.swift in Sources */,
 				2D7721152BFFE50000FCCB6A /* EmptyResultView.swift in Sources */,
+				DD9EB2002C00958D00F8B7C1 /* PrivateResumeRequestDTO.swift in Sources */,
 				DDB1704E2BFFCB6B00CD9E9C /* SelectedJobOptionsModel.swift in Sources */,
 				DDB170492BFFCB6B00CD9E9C /* SearchResultCollectionViewCell.swift in Sources */,
 			);

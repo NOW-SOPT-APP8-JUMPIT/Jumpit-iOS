@@ -242,6 +242,8 @@ class ResumeViewController: UIViewController {
     
     private func setUpNotification() {
         NotificationCenter.default.addObserver(self, selector: #selector(didOptionButtonTapped), name: NSNotification.Name("editPopUpPresented"), object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(didResumeStatusChanged(_:)), name: NSNotification.Name("resumeStatusSwitched"), object: nil)
     }
     
     private func retriveResumes() {
@@ -251,6 +253,20 @@ class ResumeViewController: UIViewController {
                 case .success(let resumes):
                     self.resumeData = resumes
                     self.resumeCollectionView.reloadData()
+                case .failure(let error):
+                    HandleNetworkError.handleNetworkError(error)
+                }
+            }
+        }
+    }
+    
+    @objc
+    private func didResumeStatusChanged(_ notification: Notification) {
+        if let isPrivate = notification.object as? Bool {
+            resumeAPI.patchPrivateStatus(userID: 1, data: PrivateResumeRequest(isPrivate: isPrivate)) { result in
+                switch result {
+                case .success(let response):
+                    self.retriveResumes()
                 case .failure(let error):
                     HandleNetworkError.handleNetworkError(error)
                 }

@@ -180,6 +180,6 @@ class ResumeCollectionViewCell: UICollectionViewCell {
     
     @objc
     private func didResumeStatusSwitched() {
-        
+        NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: "resumeStatusSwitched"), object: resumeStatusSwitch.isOn))
     }
 }

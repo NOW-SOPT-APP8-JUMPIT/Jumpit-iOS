@@ -11,7 +11,7 @@ import Moya
 enum ResumesAPI {
     case postResume(data: ResumeData)
     case fetchMyResume(userId: Int)
-    case toggleResumePrivacy(resumeId: String)
+    case toggleResumePrivacy(resumeId: Int, data: PrivateResumeRequest)
 }
 
 extension ResumesAPI: TargetType, JumpitAPIEndpoint {
@@ -25,7 +25,7 @@ extension ResumesAPI: TargetType, JumpitAPIEndpoint {
             return ""
         case .fetchMyResume(let userId):
             return "/\(userId)"
-        case .toggleResumePrivacy(let resumeId):
+        case .toggleResumePrivacy(let resumeId, let data):
             return "/\(resumeId)"
         }
     }
@@ -49,7 +49,9 @@ extension ResumesAPI: TargetType, JumpitAPIEndpoint {
         switch self {
         case .postResume(let data):
             return .requestJSONEncodable(data)
-        case .fetchMyResume, .toggleResumePrivacy:
+        case .toggleResumePrivacy(let resumeId, let data):
+            return .requestJSONEncodable(data)
+        case.fetchMyResume:
             return .requestPlain
         }
     }
