@@ -28,7 +28,6 @@ class DifferenceResumeCollectionViewCell: UICollectionViewCell {
         $0.contentMode = .scaleAspectFit
     }
     
-    
     func configure(with title: String) {
         titleLabel.text = title
     }

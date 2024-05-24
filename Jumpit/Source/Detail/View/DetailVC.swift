@@ -269,6 +269,7 @@ class DetailVC: UIViewController {
         return section
     }
     
+    
     private func fetchPositionDetail() {
         let positionId = "1" // 전달받은 positionId를 사용
         networkProvider.request(api: .fetchPositionDetail(positionId: positionId)) { [weak self] result in
@@ -340,7 +341,7 @@ class DetailVC: UIViewController {
                         )
                     ]
                     
-                    self?.updateUI(with: jobDetail, expandableJobDetails: expandableJobDetails)
+                    self?.updateUISnapshot(with: jobDetail, expandableJobDetails: expandableJobDetails)
                 } catch {
                     print("Decoding error: \(error)")
                 }
@@ -350,7 +351,7 @@ class DetailVC: UIViewController {
         }
     }
 
-    private func updateUI(with jobDetail: JobDetail, expandableJobDetails: [ExpandableJobDetail]) {
+    private func updateUISnapshot(with jobDetail: JobDetail, expandableJobDetails: [ExpandableJobDetail]) {
         var snapshot = dataSource.snapshot()
         snapshot.appendItems([jobDetail], toSection: .jobDetail)
         snapshot.appendItems(expandableJobDetails, toSection: .expandable)
@@ -368,7 +369,7 @@ class DetailVC: UIViewController {
         }
         return nil
     }
-
+  
 }
 
 extension DetailVC: UICollectionViewDataSource {
