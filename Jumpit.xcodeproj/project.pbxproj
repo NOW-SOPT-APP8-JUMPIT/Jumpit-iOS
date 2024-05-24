@@ -119,16 +119,6 @@
 		DD8B97C22C002C37001D9DBA /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		DD8B97C42C00327E001D9DBA /* ResumeEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeEditViewController.swift; sourceTree = "<group>"; };
 		DD8B97C82C00349E001D9DBA /* ResumeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeCollectionViewCell.swift; sourceTree = "<group>"; };
-		DD9EB1E22C0061D400F8B7C1 /* BottomRegisterVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomRegisterVC.swift; sourceTree = "<group>"; };
-		DD9EB1E32C0061D400F8B7C1 /* DetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
-		DD9EB1E52C0061D400F8B7C1 /* CompanyInfoCVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompanyInfoCVC.swift; sourceTree = "<group>"; };
-		DD9EB1E62C0061D400F8B7C1 /* differenceCVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = differenceCVC.swift; sourceTree = "<group>"; };
-		DD9EB1E72C0061D400F8B7C1 /* ExpandableCVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandableCVC.swift; sourceTree = "<group>"; };
-		DD9EB1E82C0061D400F8B7C1 /* JDCVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDCVC.swift; sourceTree = "<group>"; };
-		DD9EB1E92C0061D400F8B7C1 /* PositionBodyCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PositionBodyCollectionViewCell.swift; sourceTree = "<group>"; };
-		DD9EB1EA2C0061D400F8B7C1 /* PositionHeaderCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PositionHeaderCollectionViewCell.swift; sourceTree = "<group>"; };
-		DD9EB1EB2C0061D400F8B7C1 /* rewardCVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = rewardCVC.swift; sourceTree = "<group>"; };
-		DD9EB1ED2C0061D400F8B7C1 /* DetailModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailModel.swift; sourceTree = "<group>"; };
 		DD9EB1FC2C0093D100F8B7C1 /* PrivateResumeResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateResumeResponseDTO.swift; sourceTree = "<group>"; };
 		DD9EB1FF2C00958D00F8B7C1 /* PrivateResumeRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateResumeRequestDTO.swift; sourceTree = "<group>"; };
 		DDB170172BFFCB6B00CD9E9C /* ApplyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplyViewController.swift; sourceTree = "<group>"; };
@@ -286,29 +276,11 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		784DDEBF2C00A4980061B432 /* Recovered References */ = {
-			isa = PBXGroup;
-			children = (
-				DD9EB1E22C0061D400F8B7C1 /* BottomRegisterVC.swift */,
-				DD9EB1ED2C0061D400F8B7C1 /* DetailModel.swift */,
-				DD9EB1EA2C0061D400F8B7C1 /* PositionHeaderCollectionViewCell.swift */,
-				DD9EB1EB2C0061D400F8B7C1 /* rewardCVC.swift */,
-				DD9EB1E72C0061D400F8B7C1 /* ExpandableCVC.swift */,
-				DD9EB1E92C0061D400F8B7C1 /* PositionBodyCollectionViewCell.swift */,
-				DD9EB1E32C0061D400F8B7C1 /* DetailVC.swift */,
-				DD9EB1E62C0061D400F8B7C1 /* differenceCVC.swift */,
-				DD9EB1E82C0061D400F8B7C1 /* JDCVC.swift */,
-				DD9EB1E52C0061D400F8B7C1 /* CompanyInfoCVC.swift */,
-			);
-			name = "Recovered References";
-			sourceTree = "<group>";
-		};
 		7852BD0A2BEB41D20037BA7E = {
 			isa = PBXGroup;
 			children = (
 				7852BD152BEB41D20037BA7E /* Jumpit */,
 				7852BD142BEB41D20037BA7E /* Products */,
-				784DDEBF2C00A4980061B432 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};

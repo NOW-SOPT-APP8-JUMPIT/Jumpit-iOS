@@ -6,11 +6,12 @@
 //
 
 import UIKit
-
+import Moya
 
 class ResumeAddViewController: UIViewController {
     
-    
+    private let provider = MoyaProvider<ResumesAPI>()
+
     private let bottomView: UIView = UIView().then {
         $0.backgroundColor = .white
         $0.clipsToBounds = true
@@ -104,6 +105,31 @@ class ResumeAddViewController: UIViewController {
     
     @objc
     private func didAddResumeButtonTapped() {
+        let resumeTitle = "민지가 취업을 한대요!"
+        print(resumeTitle)
+        postResume(with: resumeTitle)
+    }
+    
+    func postResume(with title: String) {
+        let resumeData = ResumeData(title: title, userId: 1)
         
+        provider.request(.postResume(data: resumeData)) { result in
+            switch result {
+            case .success(let response):
+                do {
+                    let responseData = try JSONDecoder().decode(PrivateResumeResponse.self, from: response.data)
+                    if responseData.status == 201 {
+                        print(responseData.message + "고마워 민지야!")
+                        
+                    } else {
+                        print("Failed to add resume: \(responseData.message)")
+                    }
+                } catch {
+                    print("Failed to decode response: \(error)")
+                }
+            case .failure(let error):
+                print("Network error: \(error)")
+            }
+        }
     }
 }

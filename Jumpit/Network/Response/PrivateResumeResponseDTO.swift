@@ -12,3 +12,10 @@ struct PrivateResumeResponse: Codable {
     let status: Int
     let message: String
 }
+
+
+struct ResumeDataPostResponse: Codable {
+    let status: Int
+    let message: String
+    let data: Data?
+}
