@@ -269,7 +269,6 @@ class DetailVC: UIViewController {
         return section
     }
     
-    
     private func fetchPositionDetail() {
         let positionId = "1" // 전달받은 positionId를 사용
         networkProvider.request(api: .fetchPositionDetail(positionId: positionId)) { [weak self] result in
@@ -301,37 +300,43 @@ class DetailVC: UIViewController {
                     )
                     
                     // Mapping Skills to ExpandableJobDetail
-                    let skillsDetails = data.skills?.map { "\($0.name ?? ""): \($0.image ?? "")" }.joined(separator: "\n") ?? ""
+                    let jobSkills: [JobSkill] = data.skills?.map { JobSkill(name: $0.name, image: $0.image) } ?? []
                     let expandableJobDetails: [ExpandableJobDetail] = [
                         ExpandableJobDetail(
                             isExpanded: false,
                             titles: ["기술스택"],
-                            jobDetail: skillsDetails
+                            jobDetail: "",
+                            skills: jobSkills
                         ),
                         ExpandableJobDetail(
                             isExpanded: false,
                             titles: ["주요업무"],
-                            jobDetail: position?.responsibilities ?? ""
+                            jobDetail: position?.responsibilities ?? "",
+                            skills: nil
                         ),
                         ExpandableJobDetail(
                             isExpanded: false,
                             titles: ["자격요건"],
-                            jobDetail: position?.qualifications ?? ""
+                            jobDetail: position?.qualifications ?? "",
+                            skills: nil
                         ),
                         ExpandableJobDetail(
                             isExpanded: false,
                             titles: ["우대사항"],
-                            jobDetail: position?.preferred ?? ""
+                            jobDetail: position?.preferred ?? "",
+                            skills: nil
                         ),
                         ExpandableJobDetail(
                             isExpanded: false,
                             titles: ["혜택 및 복지"],
-                            jobDetail: position?.benefits ?? ""
+                            jobDetail: position?.benefits ?? "",
+                            skills: nil
                         ),
                         ExpandableJobDetail(
                             isExpanded: false,
                             titles: ["채용절차 및 기타"],
-                            jobDetail: position?.notice ?? ""
+                            jobDetail: position?.notice ?? "",
+                            skills: nil
                         )
                     ]
                     
@@ -344,6 +349,14 @@ class DetailVC: UIViewController {
             }
         }
     }
+
+    private func updateUI(with jobDetail: JobDetail, expandableJobDetails: [ExpandableJobDetail]) {
+        var snapshot = dataSource.snapshot()
+        snapshot.appendItems([jobDetail], toSection: .jobDetail)
+        snapshot.appendItems(expandableJobDetails, toSection: .expandable)
+        dataSource.apply(snapshot, animatingDifferences: true)
+    }
+
     
     //서버에서 이미지 수정하면 그떄 수정
     private func loadImage(from urlString: String?) -> UIImage? {
@@ -355,14 +368,7 @@ class DetailVC: UIViewController {
         }
         return nil
     }
-    
-    private func updateUI(with jobDetail: JobDetail, expandableJobDetails: [ExpandableJobDetail]) {
-        var snapshot = dataSource.snapshot()
-        snapshot.appendItems([jobDetail], toSection: .jobDetail)
-        snapshot.appendItems(expandableJobDetails, toSection: .expandable)
-        dataSource.apply(snapshot, animatingDifferences: true)
-    }
-    
+
 }
 
 extension DetailVC: UICollectionViewDataSource {

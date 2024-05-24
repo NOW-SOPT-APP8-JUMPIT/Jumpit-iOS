@@ -20,12 +20,30 @@ struct JobDetail: Hashable {
     var location: String
 }
 
-struct ExpandableJobDetail: Hashable {
+struct ExpandableJobDetail: Hashable, Equatable {
     var isExpanded: Bool
     let titles: [String]
     let jobDetail: String
+    let skills: [JobSkill]?
 
-  
+    static func == (lhs: ExpandableJobDetail, rhs: ExpandableJobDetail) -> Bool {
+        return lhs.isExpanded == rhs.isExpanded &&
+               lhs.titles == rhs.titles &&
+               lhs.jobDetail == rhs.jobDetail &&
+               lhs.skills == rhs.skills
+    }
+
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(isExpanded)
+        hasher.combine(titles)
+        hasher.combine(jobDetail)
+        hasher.combine(skills)
+    }
+}
+
+struct JobSkill: Hashable {
+    let name: String?
+    let image: String?
 }
 
 struct DifferentJobDetail: Hashable {
